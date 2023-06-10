@@ -26,11 +26,11 @@ public class PlayerControl : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && Quaternion.Angle(transform.rotation, Quaternion.Euler(0f, -90f, 0f)) < 0.01f)
         {
             rotateClockwise = true;
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && Quaternion.Angle(transform.rotation, Quaternion.identity) < 0.01f)
         {
             rotateCounterClockwise = true;
         }
@@ -68,9 +68,9 @@ public class PlayerControl : MonoBehaviour
 
     void Flip()
     {
-        isFacingRight = !isFacingRight; // Инвертируем флаг направления
+        isFacingRight = !isFacingRight;
         Vector3 scale = transform.localScale;
-        scale.x *= -1; // Инвертируем масштаб по оси X
+        scale.x *= -1;
         transform.localScale = scale;
     }
 }
