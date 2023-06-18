@@ -88,12 +88,23 @@ public class PlayerControl : MonoBehaviour
         else if (other.CompareTag("WrongPlaceUp"))
         {
             UnityEngine.Debug.Log("Персонаж вошел не туда");
-            transform.position = new Vector3(-4.84f, -0.085f, -9f);
+            transform.position = new Vector3(-4.84f, -0.085f, transform.position.z);
         }
         else if (other.CompareTag("WrongPlaceDown"))
         {
             UnityEngine.Debug.Log("Персонаж вошел не туда");
-            transform.position = new Vector3(2.25f, -0.085f, -9f);
+            transform.position = new Vector3(2.25f, -0.085f, transform.position.z);
+        }
+        else if (other.CompareTag("WrongPlaceRight"))
+        {
+            UnityEngine.Debug.Log("Персонаж вошел не туда");
+            transform.position = new Vector3(transform.position.x, -0.085f, -5.4f);
+        }
+        else if (other.CompareTag("WrongPlaceLeft"))
+        {
+            UnityEngine.Debug.Log("Персонаж вошел не туда");
+            transform.position = new Vector3(transform.position.x, -0.085f, -12.6f);
+            
         }
     }
 

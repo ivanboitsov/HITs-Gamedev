@@ -9,6 +9,8 @@ TagManager:
   - RightPlaceTP
   - WrongPlaceUp
   - WrongPlaceDown
+  - WrongPlaceRight
+  - WrongPlaceLeft
   layers:
   - Default
   - TransparentFX
