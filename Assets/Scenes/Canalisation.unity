@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 465476097}
   - component: {fileID: 465476096}
   m_Layer: 0
-  m_Name: wrong_tp_canals (1)
+  m_Name: wrong_tp_canals 3
   m_TagString: WrongPlaceUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 536401977}
   - component: {fileID: 536401976}
   m_Layer: 0
-  m_Name: wrong_tp_canals
+  m_Name: wrong_tp_canals 19
   m_TagString: WrongPlaceDown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 727177583}
   - component: {fileID: 727177582}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -625,7 +625,7 @@ GameObject:
   - component: {fileID: 809708359}
   - component: {fileID: 809708358}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 813708458}
   - component: {fileID: 813708457}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Turnzone trigger
   m_TagString: TurnZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 974129793}
   - component: {fileID: 974129792}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -888,7 +888,7 @@ GameObject:
   - component: {fileID: 1018365313}
   - component: {fileID: 1018365312}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1015,7 +1015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4105362945620786471, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: -0.055
       objectReference: {fileID: 0}
     - target: {fileID: 4105362945620786471, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1138,7 +1138,7 @@ GameObject:
   - component: {fileID: 1121851561}
   - component: {fileID: 1121851560}
   m_Layer: 0
-  m_Name: wrong_tp_canals (3)
+  m_Name: wrong_tp_canals 1
   m_TagString: WrongPlaceRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1193,7 +1193,7 @@ GameObject:
   - component: {fileID: 1158788127}
   - component: {fileID: 1158788126}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,7 +1388,7 @@ GameObject:
   - component: {fileID: 1315983178}
   - component: {fileID: 1315983177}
   m_Layer: 0
-  m_Name: wrong_tp_canals (2)
+  m_Name: wrong_tp_canals 0
   m_TagString: WrongPlaceLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
