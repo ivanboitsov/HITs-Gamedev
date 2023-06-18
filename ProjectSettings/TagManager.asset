@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - TurnZone
+  - WrongPlaceTP
+  - RightPlaceTP
+  - WrongPlaceUp
+  - WrongPlaceDown
   layers:
   - Default
   - TransparentFX

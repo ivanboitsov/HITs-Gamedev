@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerControl : MonoBehaviour
     private Quaternion targetRotation;
     private bool rotateClockwise;
     private bool rotateCounterClockwise;
+    private bool inTurnZone = false;
     private bool isFacingRight = true;
 
     void Awake()
@@ -26,11 +28,11 @@ public class PlayerControl : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && Quaternion.Angle(transform.rotation, Quaternion.Euler(0f, 90f, 0f)) < 0.01f)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && Quaternion.Angle(transform.rotation, Quaternion.Euler(0f, 90f, 0f)) < 0.01f && inTurnZone)
         {
             rotateCounterClockwise = true;
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && Quaternion.Angle(transform.rotation, Quaternion.identity) < 0.01f)
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && Quaternion.Angle(transform.rotation, Quaternion.identity) < 0.01f && inTurnZone)
         {
             rotateClockwise = true;
         }
@@ -72,5 +74,37 @@ public class PlayerControl : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("TurnZone"))
+        {
+            // Персонаж находится в зоне поворота, разрешаем поворот
+            inTurnZone = true;
+            rotationSpeed = 200f;
+            UnityEngine.Debug.Log("Персонаж вошел в зону поворота.");
+        }
+        else if (other.CompareTag("WrongPlaceUp"))
+        {
+            UnityEngine.Debug.Log("Персонаж вошел не туда");
+            transform.position = new Vector3(-4.84f, -0.085f, -9f);
+        }
+        else if (other.CompareTag("WrongPlaceDown"))
+        {
+            UnityEngine.Debug.Log("Персонаж вошел не туда");
+            transform.position = new Vector3(2.25f, -0.085f, -9f);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("TurnZone"))
+        {
+            // Персонаж вышел из зоны поворота, запрещаем поворот
+            inTurnZone = false;
+
+            UnityEngine.Debug.Log("Персонаж вышел из зоны поворота.");
+        }
     }
 }
