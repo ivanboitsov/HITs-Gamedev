@@ -13,6 +13,7 @@ TagManager:
   - RightPlaceDown
   - RightPlaceRight
   - RightPlaceLeft
+  - Dot
   layers:
   - Default
   - TransparentFX
