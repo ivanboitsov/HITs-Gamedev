@@ -17,6 +17,10 @@ TagManager:
   - WinDot
   - svetlyachki_picking
   - PlayerStaring
+  - PushingUp
+  - Vent_turner
+  - TurningPushingUp
+  - myVent
   layers:
   - Default
   - TransparentFX
@@ -24,8 +28,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Pickable
+  - groundLayer
   - 
   - 
   - 
