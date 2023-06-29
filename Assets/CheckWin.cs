@@ -21,32 +21,27 @@ public class CheckWin : MonoBehaviour
 
         if (CheckMaterial(getObject(targetTag, zone1), materialName))
         {
-            Debug.Log("zone1 green");
             winCounter++;
         }
         if (CheckMaterial(getObject(targetTag, zone2), materialName))
         {
-            Debug.Log("zone2 green");
             winCounter++;
         }
         if (CheckMaterial(getObject(targetTag, zone3), materialName))
         {
-            Debug.Log("zone3 green");
             winCounter++;
         }
         if (CheckMaterial(getObject(targetTag, zone4), materialName))
         {
-            Debug.Log("zone4 green");
+
             winCounter++;
         }
         if (CheckMaterial(getObject(targetTag, zone5), materialName))
         {
-            Debug.Log("zone5 green");
             winCounter++;
         }
         if (CheckMaterial(getObject(targetTag, zone6), materialName))
         {
-            Debug.Log("zone6 green");
             winCounter++;
         }
 

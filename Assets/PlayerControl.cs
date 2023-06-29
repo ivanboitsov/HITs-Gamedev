@@ -65,7 +65,6 @@ public class PlayerControl : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        //сложение всех зон взаимодействия, потому что  потому
         inInterractZone = inLeverZone;
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && Quaternion.Angle(transform.rotation, Quaternion.Euler(0f, 90f, 0f)) < 0.01f && inTurnZone)
@@ -100,13 +99,25 @@ public class PlayerControl : MonoBehaviour
                 }
             }
         }
-
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        if (inTurnZone)
+        {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
         Vector3 moveDirection = transform.right * horizontalInput * inputBoost;
         rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime * inputBoost);
 
         bool isRun = moveDirection.magnitude > 0.1f;
-        animator.SetBool("isRun", isRun);
+        UnityEngine.Debug.Log(grounded);
+        if (!grounded)
+        {
+            animator.SetBool("isRun", false);
+            animator.SetBool("isJump", true);
+        }
+        else
+        {
+            animator.SetBool("isRun", isRun);
+            animator.SetBool("isJump", false);
+        }
 
         if (horizontalInput < 0 && isFacingRight)
         {
@@ -125,6 +136,7 @@ public class PlayerControl : MonoBehaviour
         {
             Vector3 upperDirection = new Vector3(0f, 1f, 0f);
             rb.AddForce(upperDirection.normalized * 7f, ForceMode.Force);
+
         }
 
         ventRotating();
@@ -159,6 +171,7 @@ public class PlayerControl : MonoBehaviour
             // Персонаж находится в зоне поворота, разрешаем поворот
             inTurnZone = true;
             rotationSpeed = 500f;
+            
             UnityEngine.Debug.Log("Персонаж вошел в зону поворота.");
         }
         else if (other.CompareTag("WrongPlaceUp"))
@@ -241,22 +254,25 @@ public class PlayerControl : MonoBehaviour
 
     void ventRotating()
     {
-        if (ventIsOn)
+        if (ventAnimator)
         {
-            ventAnimator.speed = ventAnimator.speed + 0.001f;
-        }
-        else
-        {
-            ventAnimator.speed = ventAnimator.speed * 0.999f;
-        }
+            if (ventIsOn)
+            {
+                ventAnimator.speed = ventAnimator.speed + 0.001f;
+            }
+            else
+            {
+                ventAnimator.speed = ventAnimator.speed * 0.999f;
+            }
 
-        if (ventAnimator.speed > 1f)
-        {
-            ventAnimator.speed = 1f;
-        }
-        else if (ventAnimator.speed <= 0.0001f)
-        {
-            ventAnimator.speed = 0f;
+            if (ventAnimator.speed > 1f)
+            {
+                ventAnimator.speed = 1f;
+            }
+            else if (ventAnimator.speed <= 0.0001f)
+            {
+                ventAnimator.speed = 0f;
+            }
         }
     }
 
