@@ -15,6 +15,7 @@ TagManager:
   - RightPlaceLeft
   - Dot
   - WinDot
+  - svetlyachki_picking
   layers:
   - Default
   - TransparentFX
