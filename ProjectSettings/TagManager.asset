@@ -16,6 +16,7 @@ TagManager:
   - Dot
   - WinDot
   - svetlyachki_picking
+  - PlayerStaring
   layers:
   - Default
   - TransparentFX
