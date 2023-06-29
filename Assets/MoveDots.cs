@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class SmoothMovement : MonoBehaviour
 {
-    public string targetTag1; // Тег целевых объектов
-    public string targetTag2; // Тег целевых объектов
+    public string targetTag;
 
     public Collider zone1;
     public Collider zone2;
@@ -32,37 +31,37 @@ public class SmoothMovement : MonoBehaviour
 
     private System.Collections.IEnumerator MoveObjectsBetweenZones1()
     {
-        GameObject sp1 = getObject(targetTag1, zone1);
+        GameObject sp1 = getObject(targetTag, zone1);
         yield return StartCoroutine(MoveObjectToZone(sp1, zone2));
     }
 
     private System.Collections.IEnumerator MoveObjectsBetweenZones2()
     {
-        GameObject sp2 = getObject(targetTag1, zone2);
+        GameObject sp2 = getObject(targetTag, zone2);
         yield return StartCoroutine(MoveObjectToZone(sp2, zone3));
     }
 
     private System.Collections.IEnumerator MoveObjectsBetweenZones3()
     {
-        GameObject sp3 = getObject(targetTag1, zone3);
+        GameObject sp3 = getObject(targetTag, zone3);
         yield return StartCoroutine(MoveObjectToZone(sp3, zone4));
     }
 
     private System.Collections.IEnumerator MoveObjectsBetweenZones4()
     {
-        GameObject sp4 = getObject(targetTag1, zone4);
+        GameObject sp4 = getObject(targetTag, zone4);
         yield return StartCoroutine(MoveObjectToZone(sp4, zone5));
     }
 
     private System.Collections.IEnumerator MoveObjectsBetweenZones5()
     {
-        GameObject sp5 = getObject(targetTag1, zone5);
+        GameObject sp5 = getObject(targetTag, zone5);
         yield return StartCoroutine(MoveObjectToZone(sp5, zone6));
     }
 
     private System.Collections.IEnumerator MoveObjectsBetweenZones6()
     {
-        GameObject sp6 = getObject(targetTag1, zone6);
+        GameObject sp6 = getObject(targetTag, zone6);
         yield return StartCoroutine(MoveObjectToZone(sp6, zone1));
 
         isMoving = false;
