@@ -18,13 +18,17 @@ public class PlayerControl : MonoBehaviour
     public float interractCooldown = 0.2f;
 
     [Header("Bools")]
+    public bool flyingUp = false;
+    public bool inTurnZone = false;
     public bool ventIsOn = true;
     public bool haveLeverDetail = false;
     public bool haveSvetlyachki = false;
+    
 
     [Header("Binds")]
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode interractKey = KeyCode.E;
+    public KeyCode turnerKey = KeyCode.Q;
 
     private Animator ventAnimator;
 
@@ -32,13 +36,11 @@ public class PlayerControl : MonoBehaviour
     private Quaternion targetRotation;
     private bool rotateClockwise;
     private bool rotateCounterClockwise;
-    private bool inTurnZone = false;
     private bool isFacingRight = true;
     private int inputBoost = 1;
-    private bool flyingUp = false;
     private bool grounded;
     private bool jumpReady = true;
-    private bool interractReady = true;
+    public bool interractReady = true;
     private float leverFacing = -30f;
 
     [Header("Interract Zones Checkers")]
@@ -86,15 +88,20 @@ public class PlayerControl : MonoBehaviour
         //хотя бы одна зона взаимодействия активна
         inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone;
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && Quaternion.Angle(transform.rotation, Quaternion.Euler(0f, 90f, 0f)) < 0.01f && inTurnZone)
+        if (Input.GetKey(turnerKey) && inTurnZone && interractReady)
         {
-            rotateCounterClockwise = true;
-            inputBoost = 0;
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && Quaternion.Angle(transform.rotation, Quaternion.identity) < 0.01f && inTurnZone)
-        {
-            rotateClockwise = true;
-            inputBoost = 0;
+            if (Quaternion.Angle(transform.rotation, Quaternion.Euler(0f, 90f, 0f)) <= 0.01f)
+            {
+                rotateCounterClockwise = true;
+                inputBoost = 0;
+            }
+            else if (Quaternion.Angle(transform.rotation, Quaternion.identity) < 0.01f)
+            {
+                rotateClockwise = true;
+                inputBoost = 0;
+            }
+            interractReady = false;
+            Invoke(nameof(ResetInterraction), jumpCooldown);
         }
         if (Input.GetKey(jumpKey) && grounded && jumpReady)
         {
