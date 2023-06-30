@@ -27,6 +27,7 @@ TagManager:
   - lukTurner
   - lukOpenZone
   - keyPickZone
+  - dedStone
   layers:
   - Default
   - TransparentFX
