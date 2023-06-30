@@ -31,6 +31,7 @@ public class PlayerControl : MonoBehaviour
     private bool grounded;
     private bool jumpReady = true;
     private bool interractReady = true;
+    private float leverFacing = -30f;
 
     [Header("Interract Zones Checkers")]
 
@@ -99,23 +100,14 @@ public class PlayerControl : MonoBehaviour
                 if (!ventIsOn)
                 {
                     ventIsOn = true;
-
-                    GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lever_turner_obj");
-                    foreach (GameObject obj in objectsWithTag)
-                    {
-                        obj.transform.rotation = Quaternion.Euler(obj.transform.rotation.x, -90f, -30f);
-                    }
+                    leverFacing = -30f;
                 }
                 else
                 {
                     ventIsOn = false;
-
-                    GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lever_turner_obj");
-                    foreach (GameObject obj in objectsWithTag)
-                    {
-                        obj.transform.rotation = Quaternion.Euler(obj.transform.rotation.x, -90f, 30f);
-                    }
+                    leverFacing = 30f;
                 }
+                FixLevers();
             }
             else if (inLeverPickerZone && !haveLeverDetail)
             {
@@ -338,7 +330,7 @@ public class PlayerControl : MonoBehaviour
             GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lever_turner_obj");
             foreach (GameObject obj in objectsWithTag)
             {
-                obj.transform.rotation = Quaternion.Euler(180f, -90f, 30f);
+                obj.transform.rotation = Quaternion.Euler(180f, -90f, (-1f)*leverFacing);
             }
         }
         else
@@ -346,7 +338,7 @@ public class PlayerControl : MonoBehaviour
             GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lever_turner_obj");
             foreach (GameObject obj in objectsWithTag)
             {
-                obj.transform.rotation = Quaternion.Euler(0f, -90f, -30f);
+                obj.transform.rotation = Quaternion.Euler(0f, -90f, leverFacing);
             }
         }
     }

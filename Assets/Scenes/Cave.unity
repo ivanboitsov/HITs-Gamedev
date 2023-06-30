@@ -326,7 +326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd620c291a741ac49a1266dc7a64ffe5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.74018
+      value: -7.49018
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd620c291a741ac49a1266dc7a64ffe5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -740,6 +740,9 @@ MonoBehaviour:
   interractCooldown: 0.2
   ventIsOn: 1
   haveLeverDetail: 0
+  inInterractZone: 0
+  inLeverZone: 0
+  inLeverPickerZone: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -1776,7 +1779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6981970490832117868, guid: f7f2608a2c53a0842ab82133b19a584b, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: lever_turner_obj
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
