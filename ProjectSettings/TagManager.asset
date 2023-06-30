@@ -25,6 +25,8 @@ TagManager:
   - leverDetailPick
   - leverDetail
   - lukTurner
+  - lukOpenZone
+  - keyPickZone
   layers:
   - Default
   - TransparentFX

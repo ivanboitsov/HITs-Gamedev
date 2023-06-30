@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,10 +20,10 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Bools")]
     public bool flyingUp = false;
-    public bool inTurnZone = false;
     public bool ventIsOn = true;
     public bool haveLeverDetail = false;
     public bool haveSvetlyachki = false;
+    public bool haveLukKey = false;
     
 
     [Header("Binds")]
@@ -42,13 +43,17 @@ public class PlayerControl : MonoBehaviour
     private bool jumpReady = true;
     public bool interractReady = true;
     private float leverFacing = -30f;
+    private bool lukOpened = false;
+    private float lukFacing = 0f;
 
     [Header("Interract Zones Checkers")]
-
+    public bool inTurnZone = false;
     public bool inInterractZone = false;
     public bool inLeverZone = false;
     public bool inLeverPickerZone = false;
     public bool inSvetlyachkiPickerZone = false;
+    public bool inLukOpenZone = false;
+    public bool inKeyPickZone = false;
 
     [Header("Ground Layers")]
     public LayerMask groundLayer;
@@ -86,7 +91,7 @@ public class PlayerControl : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         //хотя бы одна зона взаимодействия активна
-        inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone;
+        inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone || inLukOpenZone || inKeyPickZone;
 
         if (Input.GetKey(turnerKey) && inTurnZone && interractReady)
         {
@@ -127,6 +132,17 @@ public class PlayerControl : MonoBehaviour
                 }
                 FixLevers();
             }
+            else if (inLukOpenZone && haveLukKey)
+            {
+                haveLukKey = false;
+                lukOpened = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lukTurner");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    GameObject luk_obj = obj.transform.GetChild(1).gameObject;
+                    luk_obj.GetComponent<BoxCollider>().enabled = false;
+                }
+            }
             else if (inLeverPickerZone && !haveLeverDetail)
             {
                 haveLeverDetail = true;
@@ -145,7 +161,19 @@ public class PlayerControl : MonoBehaviour
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 10f, obj.transform.position.z);
                 }
             }
+            else if (inKeyPickZone && !haveLukKey)
+            {
+                haveLukKey = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("keyForPick");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 2f, obj.transform.position.z);
+                }
+            }
         }
+
+
+
         if (inTurnZone)
         {
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
@@ -187,6 +215,7 @@ public class PlayerControl : MonoBehaviour
         }
 
         ventRotating();
+        luckRotation();
     }
 
     void FixedUpdate()
@@ -287,6 +316,17 @@ public class PlayerControl : MonoBehaviour
             UnityEngine.Debug.Log("Персонаж вошёл в зону поднятия светлячков");
             inSvetlyachkiPickerZone = true;
         }
+        else if (other.CompareTag("lukOpenZone"))
+        {
+            UnityEngine.Debug.Log("Персонаж вошёл в зону люка");
+            inLukOpenZone = true;
+        }
+        else if (other.CompareTag("keyPickZone"))
+        {
+            UnityEngine.Debug.Log("Персонаж вошёл в зону ключа от люка");
+            inKeyPickZone = true;
+        }
+
     }
 
     void OnTriggerExit(Collider other)
@@ -317,6 +357,11 @@ public class PlayerControl : MonoBehaviour
         {
             UnityEngine.Debug.Log("Персонаж вышел из зоны поднятия светлячков");
             inSvetlyachkiPickerZone = false;
+        }
+        else if (other.CompareTag("lukOpenZone"))
+        {
+            UnityEngine.Debug.Log("Персонаж вышел из зоны люка");
+            inLukOpenZone = false;
         }
     }
 
@@ -381,6 +426,23 @@ public class PlayerControl : MonoBehaviour
                 obj.transform.rotation = Quaternion.Euler(0f, -90f, leverFacing);
             }
         }
+    }
+
+    void luckRotation()
+    {
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lukTurner");
+        if (lukOpened)
+        {
+            foreach (GameObject obj in objectsWithTag)
+            {
+                if (lukFacing > -75f)
+                {
+                    lukFacing = lukFacing - Math.Min(Math.Abs(lukFacing+75f), Math.Abs(lukFacing)) *0.008f - 0.008f;
+                    obj.transform.rotation = Quaternion.Euler(0f, 0f, lukFacing);
+                }
+            }
+        }
+        
     }
 
     public AnimationClip FindAnimation(Animator animator, string name)

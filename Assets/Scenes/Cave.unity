@@ -817,18 +817,21 @@ MonoBehaviour:
   playerHeight: 0.1
   interractCooldown: 0.2
   flyingUp: 0
-  inTurnZone: 0
   ventIsOn: 1
   haveLeverDetail: 0
   haveSvetlyachki: 0
+  haveLukKey: 0
   jumpKey: 32
   interractKey: 101
   turnerKey: 113
   interractReady: 1
+  inTurnZone: 0
   inInterractZone: 0
   inLeverZone: 0
   inLeverPickerZone: 0
   inSvetlyachkiPickerZone: 0
+  inLukOpenZone: 0
+  inKeyPickZone: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -1751,11 +1754,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4105362945620786471, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.43
+      value: 12.899
       objectReference: {fileID: 0}
     - target: {fileID: 4105362945620786471, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.61
+      value: -2.705
       objectReference: {fileID: 0}
     - target: {fileID: 4105362945620786471, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2068,6 +2071,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f7f2608a2c53a0842ab82133b19a584b, type: 3}
   m_PrefabInstance: {fileID: 1951691582}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1995974005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995974007}
+  - component: {fileID: 1995974006}
+  m_Layer: 0
+  m_Name: KeyFromLuk
+  m_TagString: keyPickZone
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1995974006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995974005}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.03, y: 2.13, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1995974007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995974005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.773, y: 4.531, z: -20.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2019232423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,6 +2158,81 @@ Transform:
   m_Father: {fileID: 1950042447}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -6.957, y: -85.96, z: -83.351}
+--- !u!1 &2052685135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2052685138}
+  - component: {fileID: 2052685137}
+  - component: {fileID: 2052685136}
+  m_Layer: 0
+  m_Name: Luck_zones
+  m_TagString: lukOpenZone
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &2052685136
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052685135}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.31}
+  m_Center: {x: 0, y: 0, z: -3.23}
+--- !u!65 &2052685137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052685135}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.31}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &2052685138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052685135}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.902, y: 13.183, z: -2.374}
+  m_LocalScale: {x: 3.61, y: 1.18, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2082762544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,7 +2244,7 @@ GameObject:
   - component: {fileID: 2082762545}
   m_Layer: 0
   m_Name: Luk_turn
-  m_TagString: Untagged
+  m_TagString: lukTurner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
