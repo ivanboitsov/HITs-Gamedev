@@ -164,7 +164,7 @@ public class PlayerControl : MonoBehaviour
             else if (inKeyPickZone && !haveLukKey)
             {
                 haveLukKey = true;
-                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("keyForPick");
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("keyPickZone");
                 foreach (GameObject obj in objectsWithTag)
                 {
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 2f, obj.transform.position.z);
