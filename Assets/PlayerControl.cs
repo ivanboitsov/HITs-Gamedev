@@ -65,11 +65,11 @@ public class PlayerControl : MonoBehaviour
 
         foreach (GameObject obj in objectsWithTag)
         {
-            // Получаем компонент Animator
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Animator
             ventAnimator = obj.GetComponent<Animator>();
             if (ventAnimator != null)
             {
-                UnityEngine.Debug.Log("Победа");
+                UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅ");
             }
         }
 
@@ -90,7 +90,7 @@ public class PlayerControl : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        //хотя бы одна зона взаимодействия активна
+        //пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone || inLukOpenZone || inKeyPickZone;
 
         if (Input.GetKey(turnerKey) && inTurnZone && interractReady)
@@ -244,86 +244,86 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.CompareTag("TurnZone"))
         {
-            // Персонаж находится в зоне поворота, разрешаем поворот
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             inTurnZone = true;
             rotationSpeed = 500f;
             
-            UnityEngine.Debug.Log("Персонаж вошел в зону поворота.");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
         }
         else if (other.CompareTag("WrongPlaceUp"))
         {
-            UnityEngine.Debug.Log("Персонаж вошел не туда");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ");
             transform.position = new Vector3(-4.85f, 0.165f, transform.position.z);
         }
         else if (other.CompareTag("RightPlaceUP"))
         {
-            UnityEngine.Debug.Log("Персонаж вошел туда");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
             transform.position = new Vector3(-4.85f, transform.position.y+1.5f, transform.position.z);
         }
         else if (other.CompareTag("WrongPlaceDown"))
         {
-            UnityEngine.Debug.Log("Персонаж вошел не туда");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ");
             transform.position = new Vector3(2.34f, 0.165f, transform.position.z);
         }
         else if (other.CompareTag("RightPlaceDown"))
         {
-            UnityEngine.Debug.Log("Персонаж вошел туда");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
             transform.position = new Vector3(2.34f, transform.position.y + 1.5f, transform.position.z);
         }
         else if (other.CompareTag("WrongPlaceRight"))
         {
-            UnityEngine.Debug.Log("Персонаж вошел не туда");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ");
             transform.position = new Vector3(transform.position.x, 0.165f, -5.45f);
         }
         else if (other.CompareTag("RightPlaceRight"))
         {
-            UnityEngine.Debug.Log("Персонаж вошел туда");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
             transform.position = new Vector3(transform.position.x, transform.position.y + 1.5f, -5.45f);
         }
         else if (other.CompareTag("WrongPlaceLeft"))
         {
-            UnityEngine.Debug.Log("Персонаж вошел не туда");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ");
             transform.position = new Vector3(transform.position.x, 0.165f, -12.55f);
         }
         else if (other.CompareTag("RightPlaceLeft"))
         {
-            UnityEngine.Debug.Log("Персонаж вошел туда");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
             transform.position = new Vector3(transform.position.x, transform.position.y + 1.5f, -12.55f);
         }
         else if (other.CompareTag("PushingUp"))
         {
-            UnityEngine.Debug.Log("Персонаж вошёл в зону воздушной струи");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ");
             flyingUp = true;
         }
         else if (other.CompareTag("TurningPushingUp") && ventIsOn)
         {
-            UnityEngine.Debug.Log("Персонаж вошёл в зону выключаемой воздушной струи");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ");
             flyingUp = true;
         }
         else if (other.CompareTag("Vent_turner"))
         {
-            UnityEngine.Debug.Log("Персонаж вошёл в зону взаимодействия с рычагом");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
             inLeverZone = true;
             FixLevers();
         }
         else if (other.CompareTag("leverDetailPick"))
         {
-            UnityEngine.Debug.Log("Персонаж вошёл в зону поднятия рыага");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ");
             inLeverPickerZone = true;
         }
         else if (other.CompareTag("svetlyachki_picking"))
         {
-            UnityEngine.Debug.Log("Персонаж вошёл в зону поднятия светлячков");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
             inSvetlyachkiPickerZone = true;
         }
         else if (other.CompareTag("lukOpenZone"))
         {
-            UnityEngine.Debug.Log("Персонаж вошёл в зону люка");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
             inLukOpenZone = true;
         }
         else if (other.CompareTag("keyPickZone"))
         {
-            UnityEngine.Debug.Log("Персонаж вошёл в зону ключа от люка");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ");
             inKeyPickZone = true;
         }
 
@@ -333,34 +333,34 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.CompareTag("TurnZone"))
         {
-            // Персонаж вышел из зоны поворота, запрещаем поворот
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             inTurnZone = false;
 
-            UnityEngine.Debug.Log("Персонаж вышел из зоны поворота.");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
         }
         else if (other.CompareTag("PushingUp") || other.CompareTag("TurningPushingUp"))
         {
-            UnityEngine.Debug.Log("Персонаж вышел из зоны воздушной струи");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ");
             flyingUp = false;
         }
         else if (other.CompareTag("Vent_turner"))
         {
-            UnityEngine.Debug.Log("Персонаж вышел из зоны взаимодействия с рычагом");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
             inLeverZone = false;
         }
         else if (other.CompareTag("leverDetailPick"))
         {
-            UnityEngine.Debug.Log("Персонаж вышел из зоны поднятия рыага !!");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ !!");
             inLeverPickerZone = false;
         }
         else if (other.CompareTag("svetlyachki_picking"))
         {
-            UnityEngine.Debug.Log("Персонаж вышел из зоны поднятия светлячков");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
             inSvetlyachkiPickerZone = false;
         }
         else if (other.CompareTag("lukOpenZone"))
         {
-            UnityEngine.Debug.Log("Персонаж вышел из зоны люка");
+            UnityEngine.Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
             inLukOpenZone = false;
         }
     }
