@@ -65,12 +65,7 @@ public class PlayerControl : MonoBehaviour
 
         foreach (GameObject obj in objectsWithTag)
         {
-            // �������� ��������� Animator
             ventAnimator = obj.GetComponent<Animator>();
-            if (ventAnimator != null)
-            {
-                UnityEngine.Debug.Log("������");
-            }
         }
 
         FixLevers();
@@ -90,7 +85,6 @@ public class PlayerControl : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        //���� �� ���� ���� �������������� �������
         inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone || inLukOpenZone || inKeyPickZone;
 
         if (Input.GetKey(turnerKey) && inTurnZone && interractReady)
@@ -244,86 +238,68 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.CompareTag("TurnZone"))
         {
-            // �������� ��������� � ���� ��������, ��������� �������
             inTurnZone = true;
             rotationSpeed = 500f;
-            
-            UnityEngine.Debug.Log("�������� ����� � ���� ��������.");
         }
         else if (other.CompareTag("WrongPlaceUp"))
         {
-            UnityEngine.Debug.Log("�������� ����� �� ����");
             transform.position = new Vector3(-4.85f, 0.165f, transform.position.z);
         }
         else if (other.CompareTag("RightPlaceUP"))
         {
-            UnityEngine.Debug.Log("�������� ����� ����");
             transform.position = new Vector3(-4.85f, transform.position.y+1.5f, transform.position.z);
         }
         else if (other.CompareTag("WrongPlaceDown"))
         {
-            UnityEngine.Debug.Log("�������� ����� �� ����");
             transform.position = new Vector3(2.34f, 0.165f, transform.position.z);
         }
         else if (other.CompareTag("RightPlaceDown"))
         {
-            UnityEngine.Debug.Log("�������� ����� ����");
             transform.position = new Vector3(2.34f, transform.position.y + 1.5f, transform.position.z);
         }
         else if (other.CompareTag("WrongPlaceRight"))
         {
-            UnityEngine.Debug.Log("�������� ����� �� ����");
             transform.position = new Vector3(transform.position.x, 0.165f, -5.45f);
         }
         else if (other.CompareTag("RightPlaceRight"))
         {
-            UnityEngine.Debug.Log("�������� ����� ����");
             transform.position = new Vector3(transform.position.x, transform.position.y + 1.5f, -5.45f);
         }
         else if (other.CompareTag("WrongPlaceLeft"))
         {
-            UnityEngine.Debug.Log("�������� ����� �� ����");
             transform.position = new Vector3(transform.position.x, 0.165f, -12.55f);
         }
         else if (other.CompareTag("RightPlaceLeft"))
         {
-            UnityEngine.Debug.Log("�������� ����� ����");
             transform.position = new Vector3(transform.position.x, transform.position.y + 1.5f, -12.55f);
         }
         else if (other.CompareTag("PushingUp"))
         {
-            UnityEngine.Debug.Log("�������� ����� � ���� ��������� �����");
             flyingUp = true;
         }
         else if (other.CompareTag("TurningPushingUp") && ventIsOn)
         {
-            UnityEngine.Debug.Log("�������� ����� � ���� ����������� ��������� �����");
             flyingUp = true;
         }
         else if (other.CompareTag("Vent_turner"))
         {
-            UnityEngine.Debug.Log("�������� ����� � ���� �������������� � �������");
             inLeverZone = true;
             FixLevers();
         }
         else if (other.CompareTag("leverDetailPick"))
         {
-            UnityEngine.Debug.Log("�������� ����� � ���� �������� �����");
             inLeverPickerZone = true;
         }
         else if (other.CompareTag("svetlyachki_picking"))
         {
-            UnityEngine.Debug.Log("�������� ����� � ���� �������� ����������");
             inSvetlyachkiPickerZone = true;
         }
         else if (other.CompareTag("lukOpenZone"))
         {
-            UnityEngine.Debug.Log("�������� ����� � ���� ����");
             inLukOpenZone = true;
         }
         else if (other.CompareTag("keyPickZone"))
         {
-            UnityEngine.Debug.Log("�������� ����� � ���� ����� �� ����");
             inKeyPickZone = true;
         }
 
@@ -333,34 +309,26 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.CompareTag("TurnZone"))
         {
-            // �������� ����� �� ���� ��������, ��������� �������
             inTurnZone = false;
-
-            UnityEngine.Debug.Log("�������� ����� �� ���� ��������.");
         }
         else if (other.CompareTag("PushingUp") || other.CompareTag("TurningPushingUp"))
         {
-            UnityEngine.Debug.Log("�������� ����� �� ���� ��������� �����");
             flyingUp = false;
         }
         else if (other.CompareTag("Vent_turner"))
         {
-            UnityEngine.Debug.Log("�������� ����� �� ���� �������������� � �������");
             inLeverZone = false;
         }
         else if (other.CompareTag("leverDetailPick"))
         {
-            UnityEngine.Debug.Log("�������� ����� �� ���� �������� ����� !!");
             inLeverPickerZone = false;
         }
         else if (other.CompareTag("svetlyachki_picking"))
         {
-            UnityEngine.Debug.Log("�������� ����� �� ���� �������� ����������");
             inSvetlyachkiPickerZone = false;
         }
         else if (other.CompareTag("lukOpenZone"))
         {
-            UnityEngine.Debug.Log("�������� ����� �� ���� ����");
             inLukOpenZone = false;
         }
     }
