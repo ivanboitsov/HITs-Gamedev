@@ -63,7 +63,9 @@
     <Compile Include="Assets\LookAtCamera.cs" />
     <Compile Include="Assets\Wizard - 2D Character\Demo\SimplePlayerController.cs" />
     <Compile Include="Assets\PlayerControl.cs" />
+    <Compile Include="Assets\script.cs" />
     <Compile Include="Assets\WayPoint.cs" />
+    <Compile Include="Assets\clicking.cs" />
     <Compile Include="Assets\Wizard - 2D Character\Demo\WizDemo1.cs" />
     <Compile Include="Assets\MoveDots.cs" />
   </ItemGroup>

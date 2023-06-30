@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class kodfromTree : MonoBehaviour
+public class ButtonsMain : MonoBehaviour
 {
-    public []bool buttons = {false, false, false, false, false, false, false, false, false};
+    public bool[] buttons = {false, false, false, false, false, false, false, false, false};
     public int nowButton = 0;
+    public int toWin = 6;
+    public bool win = false;
+
+    //[Header("Material")]
+    //public Material[] material;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //material = GetComponent<Renderer>().materal;
     }
 
     // Update is called once per frame
@@ -18,30 +23,52 @@ public class kodfromTree : MonoBehaviour
         
     }
 
-    void OnMouseDown()
+    public void ClickOnButton(int buttonId)
     {
-        Activate(this.gameObject);
-    }
-
-    void Activate(GameObject obj)
-    {
-        if (obj.layer == "kodLayer")
+        if (buttonId == nowButton)
         {
-            int myId = (int)obj.tag.Split("_")[0]
-            if (myId == nowButton)
+            if (!buttons[buttonId])
             {
-                buttons[myId] = true;
+                SwithEmission(buttonId);
                 nowButton += 1;
             }
             else
             {
+                SwithEmission(buttonId);
                 nowButton = 0;
-                for (int i = 0; i < 9; i++)
-                {
-                    buttons[i] = false;
-                }
             }
+            
         }
+        else
+        {
+            SwithEmission(buttonId);
+            nowButton = 0;
+        }
+        CheckWin();
+    }
+
+    void CheckWin()
+    {
+        if(nowButton == toWin)
+        {
+            win = true;
+        }
+    }
+
+    void SwithEmission(int index)
+    {
+        if (!buttons[index])
+        {
+            buttons[index] = true;
+        }
+        else{
+            buttons[index] = false;
+        }
+    }
+
+    void OffEmission(int index)
+    {
+        buttons[index] = false;
     }
 
     void CheckEmmision ()
@@ -50,20 +77,22 @@ public class kodfromTree : MonoBehaviour
         {
             GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("button_"+i.ToString());
             foreach (GameObject obj in objectsWithTag)
-            {
-                Renderer renderer = myGameObject.GetComponent<Renderer>();
+            {   
+                /*
+                Renderer renderer = objectsWithTag.GetComponent<Renderer>();
+                Material myMat = renderer.material;
                 if (buttons[i])
                 {
                     //enble emission
-                    renderer.emission = true;
+                    myMat.SetColor("_EmissionColor", Color.white);
                 }
                 else
                 {
                     //disable emission
-                    renderer.emission = false;
+                    myMat.SetColor("_EmissionColor", Color.black);
                 }
+                */
             }
         }
-        
     }
 }

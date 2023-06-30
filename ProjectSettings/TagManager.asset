@@ -28,6 +28,16 @@ TagManager:
   - lukOpenZone
   - keyPickZone
   - dedStone
+  - button_0
+  - button_1
+  - button_2
+  - button_3
+  - button_4
+  - button_5
+  - button_6
+  - button_7
+  - button_8
+  - buttons
   layers:
   - Default
   - TransparentFX
@@ -38,7 +48,7 @@ TagManager:
   - Pickable
   - groundLayer
   - groundNonJumpLayer
-  - 
+  - kodLayer
   - 
   - 
   - 
