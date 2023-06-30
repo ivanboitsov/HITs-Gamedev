@@ -3,7 +3,17 @@ guid: 1af2b659742e47e44a3c87ab65de276b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mainBox_p
+    second: {fileID: 2100000, guid: f3232ee269d3e2348aac9966488bc03e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tile
+    second: {fileID: 2100000, guid: 6af22363cb330d74db5796b9b2278012, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
