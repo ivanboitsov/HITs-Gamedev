@@ -39,6 +39,8 @@ TagManager:
   - button_8
   - buttons
   - SceneTpTag
+  - brevnoFull
+  - brevnoCutted
   layers:
   - Default
   - TransparentFX
