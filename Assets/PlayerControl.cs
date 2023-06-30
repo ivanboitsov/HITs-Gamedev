@@ -8,16 +8,24 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
 
+    [Header("Movement")]
     public float speed = 0.5f;
     public float rotationSpeed = 500f;
-    public float playerHeight = 0.1f;
-    public KeyCode jumpKey = KeyCode.Space;
     public float jumpCooldown = 0.5f;
-    public KeyCode interractKey = KeyCode.E;
+
+    [Header("Other")]
+    public float playerHeight = 0.1f;
     public float interractCooldown = 0.2f;
+
+    [Header("Bools")]
     public bool ventIsOn = true;
     public bool haveLeverDetail = false;
-    
+    public bool haveSvetlyachki = false;
+
+    [Header("Binds")]
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode interractKey = KeyCode.E;
+
     private Animator ventAnimator;
 
     private float rotationAmount = 90f;
@@ -38,9 +46,11 @@ public class PlayerControl : MonoBehaviour
     public bool inInterractZone = false;
     public bool inLeverZone = false;
     public bool inLeverPickerZone = false;
+    public bool inSvetlyachkiPickerZone = false;
 
-
+    [Header("Ground Layers")]
     public LayerMask groundLayer;
+    public LayerMask groundNonJumpLayer;
 
     void Start()
     {
@@ -69,11 +79,12 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundLayer);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundLayer) || Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundNonJumpLayer);
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        inInterractZone = inLeverZone || inLeverPickerZone;
+        //хот€ бы одна зона взаимодействи€ активна
+        inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone;
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && Quaternion.Angle(transform.rotation, Quaternion.Euler(0f, 90f, 0f)) < 0.01f && inTurnZone)
         {
@@ -116,6 +127,15 @@ public class PlayerControl : MonoBehaviour
                 foreach (GameObject obj in objectsWithTag)
                 {
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y-1f, obj.transform.position.z);
+                }
+            }
+            else if (inSvetlyachkiPickerZone && !haveSvetlyachki)
+            {
+                haveSvetlyachki = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("svetlyachki_picking");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 10f, obj.transform.position.z);
                 }
             }
         }
@@ -255,6 +275,11 @@ public class PlayerControl : MonoBehaviour
             UnityEngine.Debug.Log("ѕерсонаж вошЄл в зону подн€ти€ рыага");
             inLeverPickerZone = true;
         }
+        else if (other.CompareTag("svetlyachki_picking"))
+        {
+            UnityEngine.Debug.Log("ѕерсонаж вошЄл в зону подн€ти€ светл€чков");
+            inSvetlyachkiPickerZone = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -280,6 +305,11 @@ public class PlayerControl : MonoBehaviour
         {
             UnityEngine.Debug.Log("ѕерсонаж вышел из зоны подн€ти€ рыага !!");
             inLeverPickerZone = false;
+        }
+        else if (other.CompareTag("svetlyachki_picking"))
+        {
+            UnityEngine.Debug.Log("ѕерсонаж вышел из зоны подн€ти€ светл€чков");
+            inSvetlyachkiPickerZone = false;
         }
     }
 
@@ -309,8 +339,11 @@ public class PlayerControl : MonoBehaviour
 
     private void Jump()
     {
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-        rb.AddForce(transform.up * 5.5f, ForceMode.Impulse);
+        if (!Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundNonJumpLayer))
+        {
+            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+            rb.AddForce(transform.up * 5.5f, ForceMode.Impulse);
+        }
     }
 
     private void ResetJump()
