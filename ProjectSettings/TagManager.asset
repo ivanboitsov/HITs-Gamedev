@@ -21,6 +21,9 @@ TagManager:
   - Vent_turner
   - TurningPushingUp
   - myVent
+  - lever_turner_obj
+  - leverDetailPick
+  - leverDetail
   layers:
   - Default
   - TransparentFX

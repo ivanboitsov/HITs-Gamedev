@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour
     public KeyCode interractKey = KeyCode.E;
     public float interractCooldown = 0.2f;
     public bool ventIsOn = true;
+    public bool haveLeverDetail = false;
     
     private Animator ventAnimator;
 
@@ -30,9 +31,13 @@ public class PlayerControl : MonoBehaviour
     private bool grounded;
     private bool jumpReady = true;
     private bool interractReady = true;
-    private bool inInterractZone = false;
-    private bool inLeverZone = false;
-    
+
+    [Header("Interract Zones Checkers")]
+
+    public bool inInterractZone = false;
+    public bool inLeverZone = false;
+    public bool inLeverPickerZone = false;
+
 
     public LayerMask groundLayer;
 
@@ -49,6 +54,8 @@ public class PlayerControl : MonoBehaviour
                 UnityEngine.Debug.Log("Победа");
             }
         }
+
+        FixLevers();
     }
 
     void Awake()
@@ -65,7 +72,7 @@ public class PlayerControl : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        inInterractZone = inLeverZone;
+        inInterractZone = inLeverZone || inLeverPickerZone;
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && Quaternion.Angle(transform.rotation, Quaternion.Euler(0f, 90f, 0f)) < 0.01f && inTurnZone)
         {
@@ -87,15 +94,36 @@ public class PlayerControl : MonoBehaviour
         {
             interractReady = false;
             Invoke(nameof(ResetInterraction), interractCooldown);
-            if (inLeverZone)
+            if (inLeverZone && haveLeverDetail)
             {
                 if (!ventIsOn)
                 {
                     ventIsOn = true;
+
+                    GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lever_turner_obj");
+                    foreach (GameObject obj in objectsWithTag)
+                    {
+                        obj.transform.rotation = Quaternion.Euler(obj.transform.rotation.x, -90f, -30f);
+                    }
                 }
                 else
                 {
                     ventIsOn = false;
+
+                    GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lever_turner_obj");
+                    foreach (GameObject obj in objectsWithTag)
+                    {
+                        obj.transform.rotation = Quaternion.Euler(obj.transform.rotation.x, -90f, 30f);
+                    }
+                }
+            }
+            else if (inLeverPickerZone && !haveLeverDetail)
+            {
+                haveLeverDetail = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("leverDetail");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y-1f, obj.transform.position.z);
                 }
             }
         }
@@ -228,6 +256,12 @@ public class PlayerControl : MonoBehaviour
         {
             UnityEngine.Debug.Log("Персонаж вошёл в зону взаимодействия с рычагом");
             inLeverZone = true;
+            FixLevers();
+        }
+        else if (other.CompareTag("leverDetailPick"))
+        {
+            UnityEngine.Debug.Log("Персонаж вошёл в зону поднятия рыага");
+            inLeverPickerZone = true;
         }
     }
 
@@ -249,6 +283,11 @@ public class PlayerControl : MonoBehaviour
         {
             UnityEngine.Debug.Log("Персонаж вышел из зоны взаимодействия с рычагом");
             inLeverZone = false;
+        }
+        else if (other.CompareTag("leverDetailPick"))
+        {
+            UnityEngine.Debug.Log("Персонаж вышел из зоны поднятия рыага !!");
+            inLeverPickerZone = false;
         }
     }
 
@@ -290,6 +329,26 @@ public class PlayerControl : MonoBehaviour
     private void ResetInterraction()
     {
         interractReady = true;
+    }
+
+    private void FixLevers()
+    {
+        if (!haveLeverDetail)
+        {
+            GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lever_turner_obj");
+            foreach (GameObject obj in objectsWithTag)
+            {
+                obj.transform.rotation = Quaternion.Euler(180f, -90f, 30f);
+            }
+        }
+        else
+        {
+            GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lever_turner_obj");
+            foreach (GameObject obj in objectsWithTag)
+            {
+                obj.transform.rotation = Quaternion.Euler(0f, -90f, -30f);
+            }
+        }
     }
 
     public AnimationClip FindAnimation(Animator animator, string name)
