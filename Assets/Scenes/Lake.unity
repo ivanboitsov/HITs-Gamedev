@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.059326172, g: 0.060546763, b: 0.05703739, a: 1}
+  m_IndirectSpecularColor: {r: 0.07098388, g: 0.07891851, b: 0.091369756, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9892d5db29ae44fae19e9f6305d924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Teleporter: {fileID: 1382352932}
   speed: 2
   rotationSpeed: 500
   jumpCooldown: 0.5
@@ -8669,6 +8670,51 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+--- !u!1 &1382352929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1382352931}
+  - component: {fileID: 1382352932}
+  m_Layer: 0
+  m_Name: SceneChager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1382352931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382352929}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.4826846, y: 34.407562, z: -3.1571984}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1382352932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382352929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af61f9ae05c42a4ca2f88df748a0d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportScene: 2
 --- !u!1 &1388373933
 GameObject:
   m_ObjectHideFlags: 0
@@ -12471,11 +12517,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: cave_entrance_for_exp
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 579e58ea4dfec164ab178a8333e46cf2, type: 3}
+      propertyPath: m_TagString
+      value: SceneTpTag
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 579e58ea4dfec164ab178a8333e46cf2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1826202356}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 579e58ea4dfec164ab178a8333e46cf2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1826202355}
   m_SourcePrefab: {fileID: 100100000, guid: 579e58ea4dfec164ab178a8333e46cf2, type: 3}
+--- !u!1 &1826202354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 579e58ea4dfec164ab178a8333e46cf2, type: 3}
+  m_PrefabInstance: {fileID: 1826202353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1826202355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826202354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af61f9ae05c42a4ca2f88df748a0d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportScene: 2
+--- !u!65 &1826202356
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826202354}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.25, y: 3.89, z: 1.66}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1836887606
 GameObject:
   m_ObjectHideFlags: 0

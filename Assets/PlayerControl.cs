@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
     private Rigidbody rb;
     private Animator animator;
+
+    [Header("Scripts")]
+    public SceneTeleporter Teleporter;
 
     [Header("Movement")]
     public float speed = 0.5f;
@@ -301,6 +305,11 @@ public class PlayerControl : MonoBehaviour
         else if (other.CompareTag("keyPickZone"))
         {
             inKeyPickZone = true;
+        }
+        else if (other.CompareTag("SceneTpTag"))
+        {
+            Teleporter.Teleport();
+             
         }
 
     }

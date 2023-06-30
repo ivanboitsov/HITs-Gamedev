@@ -38,6 +38,7 @@ TagManager:
   - button_7
   - button_8
   - buttons
+  - SceneTpTag
   layers:
   - Default
   - TransparentFX
