@@ -5,6 +5,8 @@ public class PuzzleController : MonoBehaviour
     public CubeController[] cubes;
     private bool isGameStarted = false;
     private Vector3[] initialPositions;
+    public bool Win = false;
+    public bool Mercy = false;
 
     private void Start()
     {
@@ -22,7 +24,7 @@ public class PuzzleController : MonoBehaviour
     {
         if (isGameStarted && CheckWinCondition())
         {
-            Debug.Log("pyatnashki win");
+            Win = true;
             isGameStarted = false;
         }
     }
@@ -46,15 +48,30 @@ public class PuzzleController : MonoBehaviour
     private bool CheckWinCondition()
     {
         float epsilon = 0.01f;
+        int errors = 0;
 
         for (int i = 0; i < cubes.Length; i++)
         {
             float distance = Vector3.Distance(cubes[i].transform.position, initialPositions[i]);
             if (distance > epsilon)
             {
-                return false;
+                errors++;
             }
         }
-        return true;
+
+        if (errors == 0)
+        {
+            return true;
+        }
+        else if (errors == 2)
+        {
+            Mercy = true;
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
