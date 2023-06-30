@@ -182,7 +182,7 @@ public class PlayerControl : MonoBehaviour
         rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime * inputBoost);
 
         bool isRun = moveDirection.magnitude > 0.1f;
-        UnityEngine.Debug.Log(grounded);
+ 
         if (!grounded)
         {
             animator.SetBool("isRun", false);
