@@ -10,10 +10,15 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
 
+    public int AirZoneId = -1;
+    public int LeverTurningId = -1;
+
     [Header("Scripts")]
     public SceneTeleporter Teleporter;
 #nullable enable
-    public CheckWin? RoundWin; 
+    public CheckWin? RoundWin;
+    [Header("Winds Object")]
+    public AirArray? AirsArray;
 
     [Header("Movement")]
     public float speed = 0.5f;
@@ -46,7 +51,7 @@ public class PlayerControl : MonoBehaviour
     public KeyCode turnerKey = KeyCode.Q;
     public KeyCode climbingKey = KeyCode.W;
 
-    private Animator ventAnimator;
+    private Animator? ventAnimator;
 
     private float rotationAmount = 90f;
     private Quaternion targetRotation;
@@ -60,6 +65,7 @@ public class PlayerControl : MonoBehaviour
     private float leverFacing = -30f;
     private bool lukOpened = false;
     private float lukFacing = 0f;
+    private float upForce = 0f;
 
     [Header("Interract Zones Checkers")]
     public bool inTurnZone = false;
@@ -89,7 +95,10 @@ public class PlayerControl : MonoBehaviour
 
         foreach (GameObject obj in objectsWithTag)
         {
-            ventAnimator = obj.GetComponent<Animator>();
+            if (ventAnimator == null)
+            {
+                ventAnimator = obj.GetComponent<Animator>();
+            }
         }
 
         FixLevers();
@@ -143,6 +152,15 @@ public class PlayerControl : MonoBehaviour
             Invoke(nameof(ResetInterraction), interractCooldown);
             if (inLeverZone && haveLeverDetail)
             {
+                if (LeverTurningId != -1)
+                {
+                    GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Vent_turner");
+                    if (LeverTurningId < objectsWithTag.Length)
+                    {
+                        objectsWithTag[LeverTurningId].GetComponent<AirArray>().SwitchStates();
+                    }
+                }
+
                 if (!ventIsOn)
                 {
                     ventIsOn = true;
@@ -163,7 +181,11 @@ public class PlayerControl : MonoBehaviour
                 foreach (GameObject obj in objectsWithTag)
                 {
                     GameObject luk_obj = obj.transform.GetChild(1).gameObject;
-                    luk_obj.GetComponent<BoxCollider>().enabled = false;
+                    try
+                    {
+                        luk_obj.GetComponent<BoxCollider>().enabled = false;
+                    }
+                    catch { }
                 }
             }
             else if (inLeverPickerZone && !haveLeverDetail)
@@ -326,15 +348,9 @@ public class PlayerControl : MonoBehaviour
             inputBoost = 1;
         }
 
-        if (flyingUp)
-        {
-            Vector3 upperDirection = new Vector3(0f, 1f, 0f);
-            rb.AddForce(upperDirection.normalized * 7f, ForceMode.Force);
-
-        }
-
         ventRotating();
         luckRotation();
+        Fly();
     }
 
     void FixedUpdate()
@@ -400,6 +416,12 @@ public class PlayerControl : MonoBehaviour
         }
         else if (other.CompareTag("PushingUp"))
         {
+            try
+            {
+                AirZoneId = other.GetComponent<Air>().GetId();
+            }
+            catch { }
+            
             flyingUp = true;
         }
         else if (other.CompareTag("TurningPushingUp") && ventIsOn)
@@ -409,6 +431,12 @@ public class PlayerControl : MonoBehaviour
         else if (other.CompareTag("Vent_turner"))
         {
             inLeverZone = true;
+            try
+            {
+                LeverTurningId = other.GetComponent<idCreator>().GetId();
+            }
+            catch { }
+            
             FixLevers();
         }
         else if (other.CompareTag("leverDetailPick"))
@@ -478,9 +506,11 @@ public class PlayerControl : MonoBehaviour
         else if (other.CompareTag("PushingUp") || other.CompareTag("TurningPushingUp"))
         {
             flyingUp = false;
+            AirZoneId = -1;
         }
         else if (other.CompareTag("Vent_turner"))
         {
+            LeverTurningId = -1;
             inLeverZone = false;
         }
         else if (other.CompareTag("leverDetailPick"))
@@ -535,7 +565,7 @@ public class PlayerControl : MonoBehaviour
 
     void ventRotating()
     {
-        if (ventAnimator)
+        if (ventAnimator != null)
         {
             if (ventIsOn)
             {
@@ -569,6 +599,22 @@ public class PlayerControl : MonoBehaviour
     private void Climb()
     {
         rb.velocity = new Vector3(rb.velocity.x, 3f, rb.velocity.z);
+    }
+
+    private void Fly()
+    {
+        if (flyingUp && AirZoneId != -1)
+        {
+            if (AirsArray != null)
+            {
+                upForce += AirsArray.GetForce(AirZoneId);
+            }
+        }
+        else
+        {
+            upForce = 0f;
+        }
+        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y + upForce, rb.velocity.z);
     }
 
     private void ResetJump()
@@ -618,16 +664,4 @@ public class PlayerControl : MonoBehaviour
         
     }
 
-    public AnimationClip FindAnimation(Animator animator, string name)
-    {
-        foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
-        {
-            if (clip.name == name)
-            {
-                return clip;
-            }
-        }
-
-        return null;
-    }
 }

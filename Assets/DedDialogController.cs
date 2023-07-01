@@ -10,7 +10,6 @@ public class DedDialogControl : MonoBehaviour
     {
         if (player.lampPlaced)
         {
-
             Destroy(gameObject);
         }
     }

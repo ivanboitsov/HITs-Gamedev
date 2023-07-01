@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07098388, g: 0.07891851, b: 0.091369756, a: 1}
+  m_IndirectSpecularColor: {r: 0.059326172, g: 0.060546763, b: 0.05703739, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -202,6 +202,8 @@ GameObject:
   m_Component:
   - component: {fileID: 42292729}
   - component: {fileID: 42292728}
+  - component: {fileID: 42292730}
+  - component: {fileID: 42292731}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Vent_turner
@@ -246,6 +248,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &42292730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42292727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090d1a403d773cb49881aede28826a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AirsArrayObjects:
+  - {fileID: 1942266628}
+--- !u!114 &42292731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42292727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec6e392431264944b24e0382c1463da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myId: 0
 --- !u!1 &159556967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,8 +1434,9 @@ GameObject:
   m_Component:
   - component: {fileID: 694205405}
   - component: {fileID: 694205404}
+  - component: {fileID: 694205406}
   m_Layer: 0
-  m_Name: AirStream
+  m_Name: AirStreamConstant
   m_TagString: PushingUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1448,6 +1478,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -6.344, y: 0, z: 0}
+--- !u!114 &694205406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694205403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a8e21692e72e74d80a4cbd5b9f9724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AirActiveForce: 1
+  AirForce: 0
+  active: 1
+  changeDurationSec: 1
+  id: 0
 --- !u!1 &696793369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,8 +1919,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9892d5db29ae44fae19e9f6305d924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AirZoneId: -1
+  LeverTurningId: -1
   Teleporter: {fileID: 165002730}
   RoundWin: {fileID: 0}
+  AirsArray: {fileID: 1201987648}
   speed: 3
   rotationSpeed: 500
   jumpCooldown: 0.5
@@ -2791,6 +2841,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1167420870}
   - component: {fileID: 1167420869}
+  - component: {fileID: 1167420871}
+  - component: {fileID: 1167420872}
   m_Layer: 0
   m_Name: Lever (1)
   m_TagString: Vent_turner
@@ -2834,6 +2886,80 @@ Transform:
   - {fileID: 705267452}
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1167420871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167420868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090d1a403d773cb49881aede28826a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AirsArrayObjects:
+  - {fileID: 1942266628}
+--- !u!114 &1167420872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167420868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec6e392431264944b24e0382c1463da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myId: 1
+--- !u!1 &1201987647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201987649}
+  - component: {fileID: 1201987648}
+  m_Layer: 0
+  m_Name: AirsArray
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1201987648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201987647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090d1a403d773cb49881aede28826a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AirsArrayObjects:
+  - {fileID: 694205406}
+  - {fileID: 1942266628}
+--- !u!4 &1201987649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201987647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -42.460564, y: 5.9232335, z: 1.7238123}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1214928275
 GameObject:
@@ -4315,9 +4441,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1942266627}
   - component: {fileID: 1942266626}
+  - component: {fileID: 1942266628}
   m_Layer: 0
-  m_Name: AirStream (1)
-  m_TagString: TurningPushingUp
+  m_Name: AirStreamTurning
+  m_TagString: PushingUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4358,6 +4485,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1942266628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942266625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a8e21692e72e74d80a4cbd5b9f9724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AirActiveForce: 1
+  AirForce: 0
+  active: 1
+  changeDurationSec: 1
+  id: 1
 --- !u!1 &1950042445
 GameObject:
   m_ObjectHideFlags: 0
