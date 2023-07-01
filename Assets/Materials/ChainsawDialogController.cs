@@ -5,7 +5,6 @@ using UnityEngine;
 public class ChainsawDialogControl : MonoBehaviour
 {
     public PlayerControl player;
-    public GameObject puzzle;
 
     private void Update()
     {
