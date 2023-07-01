@@ -50,6 +50,7 @@ TagManager:
   - lakePick
   - fishPick
   - dedStoneDeactivated
+  - benzopilaPick
   layers:
   - Default
   - TransparentFX

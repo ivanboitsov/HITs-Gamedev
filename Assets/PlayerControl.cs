@@ -34,6 +34,7 @@ public class PlayerControl : MonoBehaviour
     public bool haveWorm = false;
     public bool fishAppeared = false;
     public bool haveFish = false;
+    public bool brevnoCutted = false;
     
 
     [Header("Binds")]
@@ -69,6 +70,7 @@ public class PlayerControl : MonoBehaviour
     public bool inWormZone = false;
     public bool inLakeZone = false;
     public bool inFishZone = false;
+    public bool inBenzopilaZone = false;
 
     [Header("Ground Layers")]
     public LayerMask groundLayer;
@@ -101,7 +103,7 @@ public class PlayerControl : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone || inLukOpenZone || inKeyPickZone || inBranchZone ||
-            inRopeZone || inWormZone || inFishZone || inLakeZone;
+            inRopeZone || inWormZone || inFishZone || inLakeZone || inBenzopilaZone;
 
         if (Input.GetKey(turnerKey) && inTurnZone && interractReady)
         {
@@ -223,6 +225,20 @@ public class PlayerControl : MonoBehaviour
                 foreach (GameObject obj in objectsWithTag)
                 {
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                }
+            }
+            else if (inBenzopilaZone && !brevnoCutted && haveFish)
+            {
+                brevnoCutted = true;
+                GameObject[] brevno = GameObject.FindGameObjectsWithTag("brevnoFull");
+                foreach (GameObject obj in brevno)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                }
+                brevno = GameObject.FindGameObjectsWithTag("brevnoCutted");
+                foreach (GameObject obj in brevno)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
                 }
             }
         }
@@ -387,6 +403,10 @@ public class PlayerControl : MonoBehaviour
         {
             inFishZone = true;
         }
+        else if (other.CompareTag("benzopilaPick"))
+        {
+            inBenzopilaZone = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -434,6 +454,10 @@ public class PlayerControl : MonoBehaviour
         else if (other.CompareTag("fishPick"))
         {
             inFishZone = false;
+        }
+        else if (other.CompareTag("benzopilaPick"))
+        {
+            inBenzopilaZone = false;
         }
     }
 
