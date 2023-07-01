@@ -270,7 +270,7 @@ public class PlayerControl : MonoBehaviour
             }
             else if (inGolemZone && lampPicked && !lampPlaced && haveSvetlyachki)
             {
-                lampPicked = true;
+                lampPlaced = true;
                 GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lampActivated");
                 foreach (GameObject obj in objectsWithTag)
                 {
