@@ -12,10 +12,6 @@ public class LakeDialogControl : MonoBehaviour
         {
 
             Destroy(gameObject);
-            if (puzzle != null)
-            {
-                Destroy(puzzle);
-            }
         }
     }
 }

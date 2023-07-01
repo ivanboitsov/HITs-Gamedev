@@ -12,10 +12,6 @@ public class DedDialogControl : MonoBehaviour
         {
 
             Destroy(gameObject);
-            if (puzzle != null)
-            {
-                Destroy(puzzle);
-            }
         }
     }
 }

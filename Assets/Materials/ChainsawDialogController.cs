@@ -11,10 +11,6 @@ public class ChainsawDialogControl : MonoBehaviour
         if (player.brevnoCutted)
         {
             Destroy(gameObject);
-            if (puzzle != null)
-            {
-                Destroy(puzzle);
-            }
         }
     }
 }
