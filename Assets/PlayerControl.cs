@@ -17,6 +17,7 @@ public class PlayerControl : MonoBehaviour
     public SceneTeleporter Teleporter;
 #nullable enable
     public CheckWin? RoundWin;
+    public InterractZoneCatcher? tut;
     [Header("Winds Object")]
     public AirArray? AirsArray;
 
