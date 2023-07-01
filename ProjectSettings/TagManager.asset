@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - TurnZone
+  - WrongPlaceUp
+  - WrongPlaceDown
+  - WrongPlaceRight
+  - WrongPlaceLeft
+  - RightPlaceUP
+  - RightPlaceDown
+  - RightPlaceRight
+  - RightPlaceLeft
+  - Dot
+  - WinDot
+  - svetlyachki_picking
+  - PlayerStaring
+  - PushingUp
+  - Vent_turner
+  - TurningPushingUp
+  - myVent
+  - lever_turner_obj
+  - leverDetailPick
+  - leverDetail
+  - lukTurner
+  - lukOpenZone
+  - keyPickZone
+  - dedStone
+  - button_0
+  - button_1
+  - button_2
+  - button_3
+  - button_4
+  - button_5
+  - button_6
+  - button_7
+  - button_8
+  - buttons
+  - SceneTpTag
+  - brevnoFull
+  - brevnoCutted
+  - ropePick
+  - magicBarrierTag
+  - hookPick
+  - branchPick
+  - boxTurner
+  - wormPick
+  - lakePick
+  - fishPick
+  - dedStoneDeactivated
+  - benzopilaPick
+  - Ladder
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Pickable
+  - groundLayer
+  - groundNonJumpLayer
+  - kodLayer
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
