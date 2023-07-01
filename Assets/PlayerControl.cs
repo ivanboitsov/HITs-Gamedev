@@ -35,6 +35,8 @@ public class PlayerControl : MonoBehaviour
     public bool fishAppeared = false;
     public bool haveFish = false;
     public bool brevnoCutted = false;
+    public bool lampPicked = false;
+    public bool lampPlaced = false;
     
 
     [Header("Binds")]
@@ -73,6 +75,8 @@ public class PlayerControl : MonoBehaviour
     public bool inFishZone = false;
     public bool inBenzopilaZone = false;
     public bool inLadderZone = false;
+    public bool inGolemZone = false;
+    public bool inLampZone = false;
 
     [Header("Ground Layers")]
     public LayerMask groundLayer;
@@ -105,7 +109,7 @@ public class PlayerControl : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone || inLukOpenZone || inKeyPickZone || inBranchZone ||
-            inRopeZone || inWormZone || inFishZone || inLakeZone || inBenzopilaZone;
+            inRopeZone || inWormZone || inFishZone || inLakeZone || inBenzopilaZone || inLadderZone || inGolemZone || inLampZone;
 
         if (Input.GetKey(turnerKey) && inTurnZone && interractReady)
         {
@@ -128,7 +132,7 @@ public class PlayerControl : MonoBehaviour
             jumpReady = false;
             Invoke(nameof(ResetJump), jumpCooldown);
         }
-        if (Input.GetKey(climbingKey) && lukOpened && inLadderZone)
+        if (Input.GetKey(climbingKey) && inLadderZone)
         {
             Climb();
         }
@@ -245,6 +249,36 @@ public class PlayerControl : MonoBehaviour
                 foreach (GameObject obj in brevno)
                 {
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
+                }
+            }
+            else if (inLampZone && !lampPicked)
+            {
+                lampPicked = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lampDeactivated");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
+                }
+            }
+            else if (inGolemZone && lampPicked && !lampPlaced && haveSvetlyachki)
+            {
+                lampPicked = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lampActivated");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
+                }
+
+                GameObject[] dedStoneAct = GameObject.FindGameObjectsWithTag("dedStoneActivated");
+                foreach (GameObject obj in dedStoneAct)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
+                }
+
+                GameObject[] dedStoneDeact = GameObject.FindGameObjectsWithTag("dedStoneDeactivated");
+                foreach (GameObject obj in dedStoneDeact)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
                 }
             }
         }
@@ -417,6 +451,14 @@ public class PlayerControl : MonoBehaviour
         {
             inLadderZone = true;
         }
+        else if (other.CompareTag("lampDeactivated"))
+        {
+            inLampZone = true;
+        }
+        else if (other.CompareTag("dedStoneDeactivated"))
+        {
+            inGolemZone = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -472,6 +514,14 @@ public class PlayerControl : MonoBehaviour
         else if (other.CompareTag("Ladder"))
         {
             inLadderZone = false;
+        }
+        else if (other.CompareTag("lampDeactivated"))
+        {
+            inLampZone = false;
+        }
+        else if (other.CompareTag("dedStoneDeactivated"))
+        {
+            inGolemZone = false;
         }
     }
 
