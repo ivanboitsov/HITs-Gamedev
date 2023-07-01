@@ -220,6 +220,7 @@ MonoBehaviour:
   LeverTurningId: -1
   Teleporter: {fileID: 1382352932}
   RoundWin: {fileID: 1800418577}
+  tut: {fileID: 0}
   AirsArray: {fileID: 0}
   speed: 2
   rotationSpeed: 500
@@ -14588,8 +14589,8 @@ GameObject:
   - component: {fileID: 1908552450}
   - component: {fileID: 1908552449}
   - component: {fileID: 1908552448}
-  - component: {fileID: 1908552447}
   - component: {fileID: 1908552446}
+  - component: {fileID: 1908552451}
   m_Layer: 0
   m_Name: pressEdialogue
   m_TagString: PlayerStaring
@@ -14610,27 +14611,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 28519797}
---- !u!65 &1908552447
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908552445}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1908552448
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14696,6 +14676,18 @@ Transform:
   m_Father: {fileID: 28519800}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
+--- !u!114 &1908552451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908552445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d23a7a2e1399a49880c2d701a5481e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1910745981
 GameObject:
   m_ObjectHideFlags: 0
