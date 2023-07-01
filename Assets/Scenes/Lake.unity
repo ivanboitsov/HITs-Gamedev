@@ -502,7 +502,6 @@ GameObject:
   - component: {fileID: 45421661}
   - component: {fileID: 45421664}
   - component: {fileID: 45421663}
-  - component: {fileID: 45421662}
   m_Layer: 0
   m_Name: Tree (17)
   m_TagString: PlayerStaring
@@ -525,28 +524,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &45421662
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45421660}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &45421663
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -832,7 +809,6 @@ GameObject:
   - component: {fileID: 89361425}
   - component: {fileID: 89361424}
   - component: {fileID: 89361423}
-  - component: {fileID: 89361422}
   m_Layer: 0
   m_Name: Bush (2)
   m_TagString: PlayerStaring
@@ -840,28 +816,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &89361422
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89361421}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &89361423
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -938,7 +892,6 @@ GameObject:
   - component: {fileID: 100606196}
   - component: {fileID: 100606195}
   - component: {fileID: 100606194}
-  - component: {fileID: 100606193}
   m_Layer: 0
   m_Name: pine (3)
   m_TagString: PlayerStaring
@@ -946,28 +899,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &100606193
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100606192}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &100606194
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1044,7 +975,6 @@ GameObject:
   - component: {fileID: 101065614}
   - component: {fileID: 101065617}
   - component: {fileID: 101065616}
-  - component: {fileID: 101065615}
   m_Layer: 0
   m_Name: Tree (16)
   m_TagString: PlayerStaring
@@ -1067,28 +997,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &101065615
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101065613}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &101065616
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1150,7 +1058,6 @@ GameObject:
   - component: {fileID: 115852088}
   - component: {fileID: 115852087}
   - component: {fileID: 115852086}
-  - component: {fileID: 115852085}
   m_Layer: 0
   m_Name: Bush (22)
   m_TagString: PlayerStaring
@@ -1158,28 +1065,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &115852085
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115852084}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &115852086
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1256,7 +1141,6 @@ GameObject:
   - component: {fileID: 117073827}
   - component: {fileID: 117073826}
   - component: {fileID: 117073825}
-  - component: {fileID: 117073824}
   m_Layer: 0
   m_Name: Tree (7)
   m_TagString: PlayerStaring
@@ -1264,28 +1148,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &117073824
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117073823}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &117073825
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1362,7 +1224,6 @@ GameObject:
   - component: {fileID: 126025559}
   - component: {fileID: 126025558}
   - component: {fileID: 126025557}
-  - component: {fileID: 126025556}
   m_Layer: 0
   m_Name: Tree (12)
   m_TagString: PlayerStaring
@@ -1370,28 +1231,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &126025556
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126025555}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &126025557
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1734,7 +1573,6 @@ GameObject:
   - component: {fileID: 161754653}
   - component: {fileID: 161754652}
   - component: {fileID: 161754651}
-  - component: {fileID: 161754650}
   m_Layer: 0
   m_Name: Bush (23)
   m_TagString: PlayerStaring
@@ -1742,28 +1580,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &161754650
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 161754649}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &161754651
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2498,7 +2314,6 @@ GameObject:
   - component: {fileID: 312662157}
   - component: {fileID: 312662156}
   - component: {fileID: 312662155}
-  - component: {fileID: 312662154}
   m_Layer: 0
   m_Name: Bush (17)
   m_TagString: PlayerStaring
@@ -2506,28 +2321,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &312662154
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312662153}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &312662155
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2711,7 +2504,6 @@ GameObject:
   - component: {fileID: 318250017}
   - component: {fileID: 318250016}
   - component: {fileID: 318250015}
-  - component: {fileID: 318250014}
   m_Layer: 0
   m_Name: Bush (3)
   m_TagString: PlayerStaring
@@ -2719,28 +2511,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &318250014
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318250013}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &318250015
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2943,7 +2713,6 @@ GameObject:
   - component: {fileID: 326895534}
   - component: {fileID: 326895537}
   - component: {fileID: 326895536}
-  - component: {fileID: 326895535}
   m_Layer: 0
   m_Name: Bush (35)
   m_TagString: PlayerStaring
@@ -2966,28 +2735,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &326895535
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326895533}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &326895536
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3291,7 +3038,6 @@ GameObject:
   - component: {fileID: 419632967}
   - component: {fileID: 419632966}
   - component: {fileID: 419632965}
-  - component: {fileID: 419632964}
   m_Layer: 0
   m_Name: Bush (10)
   m_TagString: PlayerStaring
@@ -3299,28 +3045,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &419632964
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419632963}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &419632965
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3397,7 +3121,6 @@ GameObject:
   - component: {fileID: 420005637}
   - component: {fileID: 420005640}
   - component: {fileID: 420005639}
-  - component: {fileID: 420005638}
   m_Layer: 0
   m_Name: Bush (28)
   m_TagString: PlayerStaring
@@ -3420,28 +3143,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &420005638
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420005636}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &420005639
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3503,7 +3204,6 @@ GameObject:
   - component: {fileID: 436081906}
   - component: {fileID: 436081909}
   - component: {fileID: 436081908}
-  - component: {fileID: 436081907}
   m_Layer: 0
   m_Name: Bush (30)
   m_TagString: PlayerStaring
@@ -3526,28 +3226,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &436081907
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 436081905}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &436081908
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4077,7 +3755,6 @@ GameObject:
   - component: {fileID: 464938599}
   - component: {fileID: 464938598}
   - component: {fileID: 464938597}
-  - component: {fileID: 464938596}
   m_Layer: 0
   m_Name: pine (1)
   m_TagString: PlayerStaring
@@ -4085,28 +3762,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &464938596
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464938595}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &464938597
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4290,7 +3945,6 @@ GameObject:
   - component: {fileID: 522977696}
   - component: {fileID: 522977695}
   - component: {fileID: 522977694}
-  - component: {fileID: 522977693}
   m_Layer: 0
   m_Name: Tree (3)
   m_TagString: PlayerStaring
@@ -4298,28 +3952,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &522977693
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522977692}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &522977694
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4928,7 +4560,6 @@ GameObject:
   - component: {fileID: 567551586}
   - component: {fileID: 567551585}
   - component: {fileID: 567551584}
-  - component: {fileID: 567551583}
   m_Layer: 0
   m_Name: pine (2)
   m_TagString: PlayerStaring
@@ -4936,28 +4567,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &567551583
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 567551582}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &567551584
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5153,7 +4762,6 @@ GameObject:
   - component: {fileID: 601124224}
   - component: {fileID: 601124223}
   - component: {fileID: 601124222}
-  - component: {fileID: 601124221}
   m_Layer: 0
   m_Name: Tree (11)
   m_TagString: PlayerStaring
@@ -5161,28 +4769,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &601124221
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601124220}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &601124222
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5488,7 +5074,6 @@ GameObject:
   - component: {fileID: 721201945}
   - component: {fileID: 721201944}
   - component: {fileID: 721201943}
-  - component: {fileID: 721201942}
   m_Layer: 0
   m_Name: Tree (1)
   m_TagString: PlayerStaring
@@ -5496,28 +5081,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &721201942
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721201941}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &721201943
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5714,7 +5277,6 @@ GameObject:
   - component: {fileID: 748304667}
   - component: {fileID: 748304670}
   - component: {fileID: 748304669}
-  - component: {fileID: 748304668}
   m_Layer: 0
   m_Name: Bush (33)
   m_TagString: PlayerStaring
@@ -5737,28 +5299,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &748304668
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748304666}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &748304669
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5820,7 +5360,6 @@ GameObject:
   - component: {fileID: 757244221}
   - component: {fileID: 757244220}
   - component: {fileID: 757244219}
-  - component: {fileID: 757244218}
   m_Layer: 0
   m_Name: Tree
   m_TagString: PlayerStaring
@@ -5828,28 +5367,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &757244218
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 757244217}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &757244219
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5926,7 +5443,6 @@ GameObject:
   - component: {fileID: 783399946}
   - component: {fileID: 783399945}
   - component: {fileID: 783399944}
-  - component: {fileID: 783399943}
   m_Layer: 0
   m_Name: Tree (9)
   m_TagString: PlayerStaring
@@ -5934,28 +5450,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &783399943
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783399942}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &783399944
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6032,7 +5526,6 @@ GameObject:
   - component: {fileID: 785602057}
   - component: {fileID: 785602060}
   - component: {fileID: 785602059}
-  - component: {fileID: 785602058}
   m_Layer: 0
   m_Name: Bush (29)
   m_TagString: PlayerStaring
@@ -6055,28 +5548,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &785602058
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785602056}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &785602059
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6138,7 +5609,6 @@ GameObject:
   - component: {fileID: 785881436}
   - component: {fileID: 785881435}
   - component: {fileID: 785881434}
-  - component: {fileID: 785881433}
   m_Layer: 0
   m_Name: Tree (8)
   m_TagString: PlayerStaring
@@ -6146,28 +5616,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &785881433
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785881432}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &785881434
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6669,7 +6117,6 @@ GameObject:
   - component: {fileID: 860090674}
   - component: {fileID: 860090677}
   - component: {fileID: 860090676}
-  - component: {fileID: 860090675}
   m_Layer: 0
   m_Name: Bush (31)
   m_TagString: PlayerStaring
@@ -6692,28 +6139,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &860090675
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860090673}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &860090676
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6775,7 +6200,6 @@ GameObject:
   - component: {fileID: 872662090}
   - component: {fileID: 872662093}
   - component: {fileID: 872662092}
-  - component: {fileID: 872662091}
   m_Layer: 0
   m_Name: Tree (20)
   m_TagString: PlayerStaring
@@ -6798,28 +6222,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &872662091
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872662089}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &872662092
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6881,7 +6283,6 @@ GameObject:
   - component: {fileID: 904816494}
   - component: {fileID: 904816497}
   - component: {fileID: 904816496}
-  - component: {fileID: 904816495}
   m_Layer: 0
   m_Name: Bush (27)
   m_TagString: PlayerStaring
@@ -6904,28 +6305,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &904816495
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904816493}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &904816496
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7106,7 +6485,6 @@ GameObject:
   - component: {fileID: 929435851}
   - component: {fileID: 929435854}
   - component: {fileID: 929435853}
-  - component: {fileID: 929435852}
   m_Layer: 0
   m_Name: Bush (24)
   m_TagString: PlayerStaring
@@ -7129,28 +6507,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &929435852
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929435850}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &929435853
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7212,7 +6568,6 @@ GameObject:
   - component: {fileID: 964147208}
   - component: {fileID: 964147211}
   - component: {fileID: 964147210}
-  - component: {fileID: 964147209}
   m_Layer: 0
   m_Name: Bush (34)
   m_TagString: PlayerStaring
@@ -7235,28 +6590,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &964147209
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964147207}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &964147210
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7423,7 +6756,6 @@ GameObject:
   - component: {fileID: 977525132}
   - component: {fileID: 977525131}
   - component: {fileID: 977525130}
-  - component: {fileID: 977525129}
   m_Layer: 0
   m_Name: pine (6)
   m_TagString: PlayerStaring
@@ -7431,28 +6763,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &977525129
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 977525128}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &977525130
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8260,7 +7570,6 @@ GameObject:
   - component: {fileID: 1091373752}
   - component: {fileID: 1091373751}
   - component: {fileID: 1091373750}
-  - component: {fileID: 1091373749}
   m_Layer: 0
   m_Name: Bush (8)
   m_TagString: PlayerStaring
@@ -8268,28 +7577,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1091373749
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091373748}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1091373750
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8366,7 +7653,6 @@ GameObject:
   - component: {fileID: 1095941169}
   - component: {fileID: 1095941168}
   - component: {fileID: 1095941167}
-  - component: {fileID: 1095941166}
   m_Layer: 0
   m_Name: Bush (4)
   m_TagString: PlayerStaring
@@ -8374,28 +7660,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1095941166
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095941165}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1095941167
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8472,7 +7736,6 @@ GameObject:
   - component: {fileID: 1103791710}
   - component: {fileID: 1103791713}
   - component: {fileID: 1103791712}
-  - component: {fileID: 1103791711}
   m_Layer: 0
   m_Name: Tree (19)
   m_TagString: PlayerStaring
@@ -8495,28 +7758,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &1103791711
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103791709}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1103791712
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9201,7 +8442,6 @@ GameObject:
   - component: {fileID: 1181244282}
   - component: {fileID: 1181244281}
   - component: {fileID: 1181244280}
-  - component: {fileID: 1181244279}
   m_Layer: 0
   m_Name: Bush (18)
   m_TagString: PlayerStaring
@@ -9209,28 +8449,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1181244279
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181244278}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1181244280
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9307,7 +8525,6 @@ GameObject:
   - component: {fileID: 1186994096}
   - component: {fileID: 1186994095}
   - component: {fileID: 1186994094}
-  - component: {fileID: 1186994093}
   m_Layer: 0
   m_Name: pine (9)
   m_TagString: PlayerStaring
@@ -9315,28 +8532,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1186994093
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186994092}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1186994094
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9800,7 +8995,6 @@ GameObject:
   - component: {fileID: 1254052303}
   - component: {fileID: 1254052302}
   - component: {fileID: 1254052301}
-  - component: {fileID: 1254052300}
   m_Layer: 0
   m_Name: Tree (4)
   m_TagString: PlayerStaring
@@ -9808,28 +9002,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1254052300
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254052299}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1254052301
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10005,7 +9177,6 @@ GameObject:
   - component: {fileID: 1307786683}
   - component: {fileID: 1307786682}
   - component: {fileID: 1307786681}
-  - component: {fileID: 1307786680}
   m_Layer: 0
   m_Name: Bush (21)
   m_TagString: PlayerStaring
@@ -10013,28 +9184,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1307786680
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307786679}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1307786681
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10111,7 +9260,6 @@ GameObject:
   - component: {fileID: 1317746421}
   - component: {fileID: 1317746420}
   - component: {fileID: 1317746419}
-  - component: {fileID: 1317746418}
   m_Layer: 0
   m_Name: Bush (6)
   m_TagString: PlayerStaring
@@ -10119,28 +9267,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1317746418
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317746417}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1317746419
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10217,7 +9343,6 @@ GameObject:
   - component: {fileID: 1328781663}
   - component: {fileID: 1328781662}
   - component: {fileID: 1328781661}
-  - component: {fileID: 1328781660}
   m_Layer: 0
   m_Name: Bush (7)
   m_TagString: PlayerStaring
@@ -10225,28 +9350,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1328781660
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328781659}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1328781661
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10516,7 +9619,6 @@ GameObject:
   - component: {fileID: 1379270164}
   - component: {fileID: 1379270163}
   - component: {fileID: 1379270162}
-  - component: {fileID: 1379270161}
   m_Layer: 0
   m_Name: Tree (10)
   m_TagString: PlayerStaring
@@ -10524,28 +9626,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1379270161
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379270160}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1379270162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10772,7 +9852,6 @@ GameObject:
   - component: {fileID: 1396703209}
   - component: {fileID: 1396703208}
   - component: {fileID: 1396703207}
-  - component: {fileID: 1396703206}
   m_Layer: 0
   m_Name: Bush (16)
   m_TagString: PlayerStaring
@@ -10780,28 +9859,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1396703206
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396703205}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1396703207
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11298,7 +10355,6 @@ GameObject:
   - component: {fileID: 1448276421}
   - component: {fileID: 1448276420}
   - component: {fileID: 1448276419}
-  - component: {fileID: 1448276418}
   m_Layer: 0
   m_Name: Bush (20)
   m_TagString: PlayerStaring
@@ -11306,28 +10362,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1448276418
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448276417}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1448276419
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11509,7 +10543,6 @@ GameObject:
   - component: {fileID: 1452750952}
   - component: {fileID: 1452750951}
   - component: {fileID: 1452750950}
-  - component: {fileID: 1452750949}
   m_Layer: 0
   m_Name: pine (7)
   m_TagString: PlayerStaring
@@ -11517,28 +10550,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1452750949
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452750948}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1452750950
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11615,7 +10626,6 @@ GameObject:
   - component: {fileID: 1453850692}
   - component: {fileID: 1453850691}
   - component: {fileID: 1453850690}
-  - component: {fileID: 1453850689}
   m_Layer: 0
   m_Name: pine (8)
   m_TagString: PlayerStaring
@@ -11623,28 +10633,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1453850689
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453850688}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1453850690
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12058,7 +11046,6 @@ GameObject:
   - component: {fileID: 1479013772}
   - component: {fileID: 1479013775}
   - component: {fileID: 1479013774}
-  - component: {fileID: 1479013773}
   m_Layer: 0
   m_Name: Tree (14)
   m_TagString: PlayerStaring
@@ -12081,28 +11068,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &1479013773
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479013771}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1479013774
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12164,7 +11129,6 @@ GameObject:
   - component: {fileID: 1479544528}
   - component: {fileID: 1479544527}
   - component: {fileID: 1479544526}
-  - component: {fileID: 1479544525}
   m_Layer: 0
   m_Name: Tree (5)
   m_TagString: PlayerStaring
@@ -12172,28 +11136,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1479544525
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479544524}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1479544526
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12270,7 +11212,6 @@ GameObject:
   - component: {fileID: 1481019515}
   - component: {fileID: 1481019514}
   - component: {fileID: 1481019513}
-  - component: {fileID: 1481019512}
   m_Layer: 0
   m_Name: Bush
   m_TagString: PlayerStaring
@@ -12278,28 +11219,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1481019512
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481019511}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1481019513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12499,7 +11418,6 @@ GameObject:
   - component: {fileID: 1526620270}
   - component: {fileID: 1526620269}
   - component: {fileID: 1526620268}
-  - component: {fileID: 1526620267}
   m_Layer: 0
   m_Name: Bush (12)
   m_TagString: PlayerStaring
@@ -12507,28 +11425,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1526620267
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526620266}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1526620268
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12605,7 +11501,6 @@ GameObject:
   - component: {fileID: 1535333137}
   - component: {fileID: 1535333136}
   - component: {fileID: 1535333135}
-  - component: {fileID: 1535333134}
   m_Layer: 0
   m_Name: Bush (13)
   m_TagString: PlayerStaring
@@ -12613,28 +11508,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1535333134
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535333133}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1535333135
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12794,7 +11667,6 @@ GameObject:
   - component: {fileID: 1540812051}
   - component: {fileID: 1540812050}
   - component: {fileID: 1540812049}
-  - component: {fileID: 1540812048}
   m_Layer: 0
   m_Name: Bush (15)
   m_TagString: PlayerStaring
@@ -12802,28 +11674,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1540812048
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540812047}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1540812049
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13166,7 +12016,6 @@ GameObject:
   - component: {fileID: 1558099134}
   - component: {fileID: 1558099137}
   - component: {fileID: 1558099136}
-  - component: {fileID: 1558099135}
   m_Layer: 0
   m_Name: Bush (26)
   m_TagString: PlayerStaring
@@ -13189,28 +12038,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &1558099135
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558099133}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1558099136
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13272,7 +12099,6 @@ GameObject:
   - component: {fileID: 1597316926}
   - component: {fileID: 1597316929}
   - component: {fileID: 1597316928}
-  - component: {fileID: 1597316927}
   m_Layer: 0
   m_Name: Tree (21)
   m_TagString: PlayerStaring
@@ -13295,28 +12121,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &1597316927
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597316925}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1597316928
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13461,7 +12265,6 @@ GameObject:
   - component: {fileID: 1608625900}
   - component: {fileID: 1608625899}
   - component: {fileID: 1608625898}
-  - component: {fileID: 1608625897}
   m_Layer: 0
   m_Name: Bush (14)
   m_TagString: PlayerStaring
@@ -13469,28 +12272,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1608625897
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608625896}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1608625898
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13572,7 +12353,6 @@ GameObject:
   - component: {fileID: 1628478896}
   - component: {fileID: 1628478895}
   - component: {fileID: 1628478894}
-  - component: {fileID: 1628478893}
   m_Layer: 0
   m_Name: pine
   m_TagString: PlayerStaring
@@ -13580,28 +12360,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1628478893
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628478892}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1628478894
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13888,7 +12646,6 @@ GameObject:
   - component: {fileID: 1690771712}
   - component: {fileID: 1690771715}
   - component: {fileID: 1690771714}
-  - component: {fileID: 1690771713}
   m_Layer: 0
   m_Name: Tree (18)
   m_TagString: PlayerStaring
@@ -13911,28 +12668,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &1690771713
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690771711}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1690771714
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14204,7 +12939,6 @@ GameObject:
   - component: {fileID: 1747145531}
   - component: {fileID: 1747145530}
   - component: {fileID: 1747145529}
-  - component: {fileID: 1747145528}
   m_Layer: 0
   m_Name: Bush (5)
   m_TagString: PlayerStaring
@@ -14212,28 +12946,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1747145528
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747145527}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1747145529
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14310,7 +13022,6 @@ GameObject:
   - component: {fileID: 1750719209}
   - component: {fileID: 1750719208}
   - component: {fileID: 1750719207}
-  - component: {fileID: 1750719206}
   m_Layer: 0
   m_Name: Bush (9)
   m_TagString: PlayerStaring
@@ -14318,28 +13029,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1750719206
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1750719205}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1750719207
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14416,7 +13105,6 @@ GameObject:
   - component: {fileID: 1753864761}
   - component: {fileID: 1753864764}
   - component: {fileID: 1753864763}
-  - component: {fileID: 1753864762}
   m_Layer: 0
   m_Name: Bush (25)
   m_TagString: PlayerStaring
@@ -14439,28 +13127,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &1753864762
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753864760}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1753864763
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14815,7 +13481,6 @@ GameObject:
   - component: {fileID: 1791259096}
   - component: {fileID: 1791259095}
   - component: {fileID: 1791259094}
-  - component: {fileID: 1791259093}
   m_Layer: 0
   m_Name: pine (4)
   m_TagString: PlayerStaring
@@ -14823,28 +13488,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1791259093
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791259092}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1791259094
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14988,7 +13631,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800418574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.17160371, z: 0.00081158924}
+  m_LocalPosition: {x: -0, y: -0.17160371, z: 5.3}
   m_LocalScale: {x: 0.8250144, y: 0.8250144, z: 825.01447}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15687,7 +14330,6 @@ GameObject:
   - component: {fileID: 1903545413}
   - component: {fileID: 1903545416}
   - component: {fileID: 1903545415}
-  - component: {fileID: 1903545414}
   m_Layer: 0
   m_Name: Tree (15)
   m_TagString: PlayerStaring
@@ -15710,28 +14352,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &1903545414
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903545412}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1903545415
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15793,7 +14413,6 @@ GameObject:
   - component: {fileID: 1904686255}
   - component: {fileID: 1904686258}
   - component: {fileID: 1904686257}
-  - component: {fileID: 1904686256}
   m_Layer: 0
   m_Name: Bush (32)
   m_TagString: PlayerStaring
@@ -15816,28 +14435,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &1904686256
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904686254}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1904686257
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15983,7 +14580,6 @@ GameObject:
   - component: {fileID: 1910745985}
   - component: {fileID: 1910745984}
   - component: {fileID: 1910745983}
-  - component: {fileID: 1910745982}
   m_Layer: 0
   m_Name: pine (10)
   m_TagString: PlayerStaring
@@ -15991,28 +14587,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1910745982
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910745981}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1910745983
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16247,7 +14821,6 @@ GameObject:
   - component: {fileID: 1927454191}
   - component: {fileID: 1927454190}
   - component: {fileID: 1927454189}
-  - component: {fileID: 1927454188}
   m_Layer: 0
   m_Name: Tree (2)
   m_TagString: PlayerStaring
@@ -16255,28 +14828,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1927454188
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927454187}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1927454189
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16977,7 +15528,6 @@ GameObject:
   - component: {fileID: 1991181289}
   - component: {fileID: 1991181288}
   - component: {fileID: 1991181287}
-  - component: {fileID: 1991181286}
   m_Layer: 0
   m_Name: Bush (11)
   m_TagString: PlayerStaring
@@ -16985,28 +15535,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1991181286
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991181285}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1991181287
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17083,7 +15611,6 @@ GameObject:
   - component: {fileID: 1998314879}
   - component: {fileID: 1998314878}
   - component: {fileID: 1998314877}
-  - component: {fileID: 1998314876}
   m_Layer: 0
   m_Name: Bush (1)
   m_TagString: PlayerStaring
@@ -17091,28 +15618,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1998314876
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998314875}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1998314877
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17522,7 +16027,6 @@ GameObject:
   - component: {fileID: 2066323647}
   - component: {fileID: 2066323650}
   - component: {fileID: 2066323649}
-  - component: {fileID: 2066323648}
   m_Layer: 0
   m_Name: pine (11)
   m_TagString: PlayerStaring
@@ -17545,28 +16049,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &2066323648
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066323646}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2066323649
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17628,7 +16110,6 @@ GameObject:
   - component: {fileID: 2067975218}
   - component: {fileID: 2067975217}
   - component: {fileID: 2067975216}
-  - component: {fileID: 2067975215}
   m_Layer: 0
   m_Name: Tree (6)
   m_TagString: PlayerStaring
@@ -17636,28 +16117,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &2067975215
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067975214}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2067975216
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17734,7 +16193,6 @@ GameObject:
   - component: {fileID: 2088289311}
   - component: {fileID: 2088289310}
   - component: {fileID: 2088289309}
-  - component: {fileID: 2088289308}
   m_Layer: 0
   m_Name: pine (5)
   m_TagString: PlayerStaring
@@ -17742,28 +16200,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &2088289308
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088289307}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2088289309
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17822,7 +16258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088289307}
   m_LocalRotation: {x: 0.4999999, y: -0.4999998, z: 0.49999994, w: 0.5000004}
-  m_LocalPosition: {x: 18.89, y: -7.717369, z: -4.06}
+  m_LocalPosition: {x: 19.917, y: -7.717369, z: -4.469}
   m_LocalScale: {x: 0.23585509, y: 0.23585509, z: 0.31687132}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17840,7 +16276,6 @@ GameObject:
   - component: {fileID: 2125388280}
   - component: {fileID: 2125388279}
   - component: {fileID: 2125388278}
-  - component: {fileID: 2125388277}
   m_Layer: 0
   m_Name: Bush (19)
   m_TagString: PlayerStaring
@@ -17848,28 +16283,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &2125388277
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125388276}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2125388278
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17946,7 +16359,6 @@ GameObject:
   - component: {fileID: 2128194734}
   - component: {fileID: 2128194737}
   - component: {fileID: 2128194736}
-  - component: {fileID: 2128194735}
   m_Layer: 0
   m_Name: Tree (13)
   m_TagString: PlayerStaring
@@ -17969,28 +16381,6 @@ Transform:
   m_Father: {fileID: 169370027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!64 &2128194735
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128194733}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2128194736
 MeshRenderer:
   m_ObjectHideFlags: 0
