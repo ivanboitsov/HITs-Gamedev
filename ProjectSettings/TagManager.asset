@@ -51,6 +51,7 @@ TagManager:
   - fishPick
   - dedStoneDeactivated
   - benzopilaPick
+  - Ladder
   layers:
   - Default
   - TransparentFX

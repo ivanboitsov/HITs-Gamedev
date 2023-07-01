@@ -41,6 +41,7 @@ public class PlayerControl : MonoBehaviour
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode interractKey = KeyCode.E;
     public KeyCode turnerKey = KeyCode.Q;
+    public KeyCode climbingKey = KeyCode.W;
 
     private Animator ventAnimator;
 
@@ -71,6 +72,7 @@ public class PlayerControl : MonoBehaviour
     public bool inLakeZone = false;
     public bool inFishZone = false;
     public bool inBenzopilaZone = false;
+    public bool inLadderZone = false;
 
     [Header("Ground Layers")]
     public LayerMask groundLayer;
@@ -125,6 +127,10 @@ public class PlayerControl : MonoBehaviour
             Jump();
             jumpReady = false;
             Invoke(nameof(ResetJump), jumpCooldown);
+        }
+        if (Input.GetKey(climbingKey) && lukOpened && inLadderZone)
+        {
+            Climb();
         }
         if (Input.GetKey(interractKey) && inInterractZone && interractReady)
         {
@@ -407,6 +413,10 @@ public class PlayerControl : MonoBehaviour
         {
             inBenzopilaZone = true;
         }
+        else if (other.CompareTag("Ladder"))
+        {
+            inLadderZone = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -459,6 +469,10 @@ public class PlayerControl : MonoBehaviour
         {
             inBenzopilaZone = false;
         }
+        else if (other.CompareTag("Ladder"))
+        {
+            inLadderZone = false;
+        }
     }
 
     void ventRotating()
@@ -492,6 +506,11 @@ public class PlayerControl : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
             rb.AddForce(transform.up * 5.5f, ForceMode.Impulse);
         }
+    }
+
+    private void Climb()
+    {
+        rb.velocity = new Vector3(rb.velocity.x, 3f, rb.velocity.z);
     }
 
     private void ResetJump()
