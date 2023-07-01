@@ -6,6 +6,7 @@ public class CheckWin : MonoBehaviour
 {
     public string targetTag;
     public string materialName;
+    public bool winned = false;
 
     public Collider zone1;
     public Collider zone2;
@@ -47,7 +48,22 @@ public class CheckWin : MonoBehaviour
 
         if (winCounter == 6)
         {
-            Debug.Log("win");
+            win();
+        }
+    }
+
+    private void win()
+    {
+        if (!winned)
+        {
+            winned = true;
+
+            GameObject[] boxWall = GameObject.FindGameObjectsWithTag("boxTurner");
+
+            foreach (GameObject obj in boxWall)
+            {
+                obj.transform.rotation = Quaternion.Euler(0f, -172f, 0f);
+            }
         }
     }
 

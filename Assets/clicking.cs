@@ -30,6 +30,7 @@ public class ClickingButton : MonoBehaviour
         if (!buttonsScript.win)
         {
             buttonsScript.ClickOnButton(myId);
+            print("poeshGovna");
         }
     }
 }

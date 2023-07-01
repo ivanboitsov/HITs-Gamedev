@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Scripts")]
     public SceneTeleporter Teleporter;
+    public CheckWin RoundWin;
 
     [Header("Movement")]
     public float speed = 0.5f;
@@ -28,6 +29,11 @@ public class PlayerControl : MonoBehaviour
     public bool haveLeverDetail = false;
     public bool haveSvetlyachki = false;
     public bool haveLukKey = false;
+    public bool haveRope = false;
+    public bool haveBranch = false;
+    public bool haveWorm = false;
+    public bool fishAppeared = false;
+    public bool haveFish = false;
     
 
     [Header("Binds")]
@@ -58,6 +64,11 @@ public class PlayerControl : MonoBehaviour
     public bool inSvetlyachkiPickerZone = false;
     public bool inLukOpenZone = false;
     public bool inKeyPickZone = false;
+    public bool inRopeZone = false;
+    public bool inBranchZone = false;
+    public bool inWormZone = false;
+    public bool inLakeZone = false;
+    public bool inFishZone = false;
 
     [Header("Ground Layers")]
     public LayerMask groundLayer;
@@ -89,7 +100,8 @@ public class PlayerControl : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone || inLukOpenZone || inKeyPickZone;
+        inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone || inLukOpenZone || inKeyPickZone || inBranchZone ||
+            inRopeZone || inWormZone || inFishZone || inLakeZone;
 
         if (Input.GetKey(turnerKey) && inTurnZone && interractReady)
         {
@@ -166,6 +178,51 @@ public class PlayerControl : MonoBehaviour
                 foreach (GameObject obj in objectsWithTag)
                 {
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 2f, obj.transform.position.z);
+                }
+            }
+            else if (inRopeZone && !haveRope)
+            {
+                haveRope = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("ropePick");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                }
+            }
+            else if (inBranchZone && !haveBranch)
+            {
+                haveBranch = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("branchPick");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                }
+            }
+            else if (inWormZone && !haveWorm && RoundWin.winned)
+            {
+                haveWorm = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("wormPick");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                }
+            }
+            else if (inLakeZone && !fishAppeared && haveBranch && haveRope && haveWorm)
+            {
+                fishAppeared = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("fishPick");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
+                }
+            }
+            else if (inFishZone && !haveFish)
+            {
+                haveFish = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("fishPick");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
                 }
             }
         }
@@ -309,9 +366,27 @@ public class PlayerControl : MonoBehaviour
         else if (other.CompareTag("SceneTpTag"))
         {
             Teleporter.Teleport();
-             
         }
-
+        else if (other.CompareTag("ropePick"))
+        {
+            inRopeZone = true;
+        }
+        else if (other.CompareTag("branchPick"))
+        {
+            inBranchZone = true;
+        }
+        else if (other.CompareTag("wormPick"))
+        {
+            inWormZone = true;
+        }
+        else if (other.CompareTag("lakePick"))
+        {
+            inLakeZone = true;
+        }
+        else if (other.CompareTag("fishPick"))
+        {
+            inFishZone = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -339,6 +414,26 @@ public class PlayerControl : MonoBehaviour
         else if (other.CompareTag("lukOpenZone"))
         {
             inLukOpenZone = false;
+        }
+        else if (other.CompareTag("ropePick"))
+        {
+            inRopeZone = false;
+        }
+        else if (other.CompareTag("branchPick"))
+        {
+            inBranchZone = false;
+        }
+        else if (other.CompareTag("wormPick"))
+        {
+            inWormZone = false;
+        }
+        else if (other.CompareTag("lakePick"))
+        {
+            inLakeZone = false;
+        }
+        else if (other.CompareTag("fishPick"))
+        {
+            inFishZone = false;
         }
     }
 

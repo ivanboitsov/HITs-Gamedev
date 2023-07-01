@@ -9,9 +9,6 @@ public class ButtonsMain : MonoBehaviour
     public int toWin = 6;
     public bool win = false;
 
-    //[Header("Material")]
-    //public Material[] material;
-    // Start is called before the first frame update
     void Start()
     {
         //material = GetComponent<Renderer>().materal;
@@ -25,6 +22,7 @@ public class ButtonsMain : MonoBehaviour
 
     public void ClickOnButton(int buttonId)
     {
+        print("poel");
         if (buttonId == nowButton)
         {
             if (!buttons[buttonId])
@@ -51,6 +49,14 @@ public class ButtonsMain : MonoBehaviour
     {
         if(nowButton == toWin)
         {
+            if (!win)
+            {
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("magicBarrierTag");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 100f, obj.transform.position.z);
+                }
+            }
             win = true;
         }
     }

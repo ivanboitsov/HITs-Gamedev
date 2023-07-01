@@ -41,6 +41,14 @@ TagManager:
   - SceneTpTag
   - brevnoFull
   - brevnoCutted
+  - ropePick
+  - magicBarrierTag
+  - hookPick
+  - branchPick
+  - boxTurner
+  - wormPick
+  - lakePick
+  - fishPick
   layers:
   - Default
   - TransparentFX
