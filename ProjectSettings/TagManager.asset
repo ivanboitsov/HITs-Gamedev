@@ -49,6 +49,7 @@ TagManager:
   - wormPick
   - lakePick
   - fishPick
+  - dedStoneDeactivated
   layers:
   - Default
   - TransparentFX
