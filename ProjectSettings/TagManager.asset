@@ -55,6 +55,7 @@ TagManager:
   - lampDeactivated
   - lampActivated
   - dedStoneActivated
+  - Pyatnashki
   layers:
   - Default
   - TransparentFX

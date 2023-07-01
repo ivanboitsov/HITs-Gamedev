@@ -12,7 +12,8 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Scripts")]
     public SceneTeleporter Teleporter;
-    public CheckWin RoundWin;
+#nullable enable
+    public CheckWin? RoundWin; 
 
     [Header("Movement")]
     public float speed = 0.5f;
@@ -210,14 +211,21 @@ public class PlayerControl : MonoBehaviour
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
                 }
             }
-            else if (inWormZone && !haveWorm && RoundWin.winned)
+            else if (inWormZone && !haveWorm)
             {
-                haveWorm = true;
-                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("wormPick");
-                foreach (GameObject obj in objectsWithTag)
+                if (RoundWin != null)
                 {
-                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                    if (RoundWin.winned)
+                    {
+                        haveWorm = true;
+                        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("wormPick");
+                        foreach (GameObject obj in objectsWithTag)
+                        {
+                            obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                        }
+                    }
                 }
+                
             }
             else if (inLakeZone && !fishAppeared && haveBranch && haveRope && haveWorm)
             {
