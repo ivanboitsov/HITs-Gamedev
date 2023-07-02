@@ -8,9 +8,9 @@ public class OTO_Main : MonoBehaviour
     public float clickTimeout = 1f;
     public bool win = false;
     private int changing = 0;
+    private bool ch = false;
 
-
-    private int[] poryadok = { 4, 2, 1, 3, 0};
+    private int[] poryadok = { 4, 2, 1, 3, 0 };
 
     public void ClickOnButton(int buttonId)
     {
@@ -27,8 +27,9 @@ public class OTO_Main : MonoBehaviour
             {
                 idInObj++;
             }
-            if (idInP != 0 && idInP != 4)
+            if (idInP > 0 && idInP < 4)
             {
+                ch = true;
                 changing = idInP;
                 Vector3 theCenter = transform.GetChild(idInObj).gameObject.transform.position;
                 int k = 0;
@@ -37,9 +38,9 @@ public class OTO_Main : MonoBehaviour
                     k++;
                 }
 
-                UnityEngine.Debug.Log( (idInP-1).ToString() + " " + k.ToString());
+                //UnityEngine.Debug.Log( (idInP-1).ToString() + " " + k.ToString());
 
-                transform.GetChild(k).gameObject.GetComponent<moveRound>().MoveStart(180f, theCenter);
+                transform.GetChild(k).gameObject.GetComponent<moveRound>().MoveStart(180f, theCenter, 0.205f * (idInP - 3));
 
                 k = 0;
                 while (transform.GetChild(k).gameObject.GetComponent<idCreator>().GetId() != poryadok[idInP + 1])
@@ -47,25 +48,29 @@ public class OTO_Main : MonoBehaviour
                     k++;
                 }
 
-                UnityEngine.Debug.Log( (idInP + 1).ToString() + " " + k.ToString());
+                //UnityEngine.Debug.Log( (idInP + 1).ToString() + " " + k.ToString());
 
-                transform.GetChild(k).gameObject.GetComponent<moveRound>().MoveStart(180f, theCenter);
+                transform.GetChild(k).gameObject.GetComponent<moveRound>().MoveStart(180f, theCenter, 0.205f * (idInP - 1));
                 //UnityEngine.Debug.Log(theCenter.y.ToString() + " tis is Y");
                 //UnityEngine.Debug.Log(theCenter.x);
-                Invoke(nameof(changePoryadok), clickTimeout);
             }
-            
-            
+            else
+            {
+                ch = false;
+            }
+            Invoke(nameof(changePoryadok), clickTimeout);
         }
     }
 
     private void changePoryadok()
     {
-        int res = poryadok[changing - 1];
-        poryadok[changing - 1] = poryadok[changing + 1];
-        poryadok[changing + 1] = res;
+        if (ch)
+        {
+            int res = poryadok[changing - 1];
+            poryadok[changing - 1] = poryadok[changing + 1];
+            poryadok[changing + 1] = res;
+        }
         clickReady = true;
-
         string gay = "";
         foreach (var p in poryadok)
         {

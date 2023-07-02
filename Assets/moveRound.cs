@@ -28,13 +28,13 @@ public class moveRound : MonoBehaviour
         }
     }
 
-    public void MoveStart(float angle, Vector3 center)
+    public void MoveStart(float angle, Vector3 center, float startXx)
     {
         movedG = 0f;
         needG = angle;
         myCenter = center;
-        distation = myCenter.x - transform.position.x;
-        startX = transform.position.x;
+        distation = myCenter.x - startXx;
+        startX = startXx;//transform.position.x;
         if (distation < 0f)
         {
             distation = Math.Abs(distation);
