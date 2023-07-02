@@ -423,7 +423,6 @@ GameObject:
   m_Component:
   - component: {fileID: 295623299}
   - component: {fileID: 295623298}
-  - component: {fileID: 295623297}
   m_Layer: 0
   m_Name: oneThroughOne
   m_TagString: Untagged
@@ -431,21 +430,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &295623297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 295623296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 242ef5acc9669dc41b627d9c75598c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickReady: 1
-  clickTimeout: 1
-  win: 0
 --- !u!114 &295623298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,7 +520,6 @@ MonoBehaviour:
   startX: 0
   moveUp: 1
   moveRight: 1
-  middle: 0
 --- !u!114 &469892352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec6e392431264944b24e0382c1463da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myId: 4
+  myId: 2
 --- !u!135 &469892353
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1007,7 +990,6 @@ MonoBehaviour:
   startX: 0
   moveUp: 1
   moveRight: 1
-  middle: 0
 --- !u!114 &821004112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1356,7 +1338,6 @@ MonoBehaviour:
   startX: 0
   moveUp: 1
   moveRight: 1
-  middle: 0
 --- !u!114 &1220889005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1369,7 +1350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec6e392431264944b24e0382c1463da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myId: 1
+  myId: 4
 --- !u!135 &1220889006
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1509,7 +1490,6 @@ MonoBehaviour:
   startX: 0
   moveUp: 1
   moveRight: 1
-  middle: 0
 --- !u!114 &1472336141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1752,7 +1732,6 @@ MonoBehaviour:
   startX: 0
   moveUp: 1
   moveRight: 1
-  middle: 0
 --- !u!114 &1835482852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1765,7 +1744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec6e392431264944b24e0382c1463da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myId: 2
+  myId: 1
 --- !u!135 &1835482853
 SphereCollider:
   m_ObjectHideFlags: 0

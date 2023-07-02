@@ -5,12 +5,18 @@ using UnityEngine;
 public class OTO_Main : MonoBehaviour
 {
     public bool clickReady = true;
-    public float clickTimeout = 1f;
+    public float clickTimeout = 1.5f;
     public bool win = false;
     private int changing = 0;
     private bool ch = false;
+    // как сформировал послетдовательность:
+    // 0 1 2 3 4
+    // 2 1 0 3 4
+    // 2 3 0 1 4
+    // 2 1 0 3 4
+    // 2 1 4 3 0
 
-    private int[] poryadok = { 4, 2, 1, 3, 0 };
+    private int[] poryadok = { 2, 1, 4, 3, 0 };
 
     public void ClickOnButton(int buttonId)
     {
@@ -27,6 +33,7 @@ public class OTO_Main : MonoBehaviour
             {
                 idInObj++;
             }
+            UnityEngine.Debug.Log(idInP.ToString()+" "+idInObj.ToString());
             if (idInP > 0 && idInP < 4)
             {
                 ch = true;
@@ -69,13 +76,23 @@ public class OTO_Main : MonoBehaviour
             int res = poryadok[changing - 1];
             poryadok[changing - 1] = poryadok[changing + 1];
             poryadok[changing + 1] = res;
+            int now = 0;
+            foreach (var num in poryadok)
+            {
+                if (now == num)
+                {
+                    now += 1;
+                }
+                else
+                {
+                    now = -100;
+                }
+            }
+            if (now >= 5)
+            {
+                win = true;
+            }
         }
         clickReady = true;
-        string gay = "";
-        foreach (var p in poryadok)
-        {
-            gay += " " + p.ToString();
-        }
-        UnityEngine.Debug.Log(gay);
     }
 }
