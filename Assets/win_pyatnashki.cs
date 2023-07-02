@@ -9,6 +9,7 @@ public class PuzzleController : MonoBehaviour
     public bool Mercy = false;
     public float moveTimeout = 0.01f;
     public float moved = 0f;
+    public bool move_started = false;
 
 
     private void Start()
@@ -32,9 +33,10 @@ public class PuzzleController : MonoBehaviour
             isGameStarted = false;
             
         }
-        if (Win)
+        if (Win && !move_started)
         {
             MoveAfterWin();
+            move_started = true;
         }
     }
 
@@ -58,7 +60,7 @@ public class PuzzleController : MonoBehaviour
     {
         moved -= 0.1f;
         transform.position = new Vector3(transform.position.x, moved, transform.position.z);
-        if (moved < -39.06f)
+        if (moved > -39.06f)
         {
             Invoke(nameof(MoveAfterWin), moveTimeout);
         }

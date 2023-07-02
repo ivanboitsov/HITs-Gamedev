@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
 
     public int AirZoneId = -1;
     public int LeverTurningId = -1;
+    public float upForce = 0f;
 
     [Header("Scripts")]
     public SceneTeleporter Teleporter;
@@ -33,7 +34,6 @@ public class PlayerControl : MonoBehaviour
     public float interractCooldown = 0.2f;
 
     [Header("Bools")]
-    public bool flyingUp = false;
     public bool ventIsOn = true;
     public bool haveLeverDetail = false;
     public bool haveSvetlyachki = false;
@@ -68,7 +68,7 @@ public class PlayerControl : MonoBehaviour
     private float leverFacing = -30f;
     private bool lukOpened = false;
     private float lukFacing = 0f;
-    private float upForce = 0f;
+    
 
     [Header("Interract Zones Checkers")]
     public bool inTurnZone = false;
@@ -198,10 +198,10 @@ public class PlayerControl : MonoBehaviour
             else if (inLeverPickerZone && !haveLeverDetail)
             {
                 haveLeverDetail = true;
-                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("leverDetail");
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("leverDetailPick");
                 foreach (GameObject obj in objectsWithTag)
                 {
-                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y-1f, obj.transform.position.z);
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y-5f, obj.transform.position.z+20f);
                 }
             }
             else if (inSvetlyachkiPickerZone && !haveSvetlyachki)
@@ -438,12 +438,6 @@ public class PlayerControl : MonoBehaviour
                 AirZoneId = other.GetComponent<Air>().GetId();
             }
             catch { }
-            
-            flyingUp = true;
-        }
-        else if (other.CompareTag("TurningPushingUp") && ventIsOn)
-        {
-            flyingUp = true;
         }
         else if (other.CompareTag("Vent_turner"))
         {
@@ -522,7 +516,6 @@ public class PlayerControl : MonoBehaviour
         }
         else if (other.CompareTag("PushingUp") || other.CompareTag("TurningPushingUp"))
         {
-            flyingUp = false;
             AirZoneId = -1;
         }
         else if (other.CompareTag("Vent_turner"))
@@ -620,14 +613,20 @@ public class PlayerControl : MonoBehaviour
 
     private void Fly()
     {
-        if (flyingUp && AirZoneId != -1)
+        if (AirZoneId != -1)
         {
             if (AirsArray != null)
             {
                 upForce += AirsArray.GetForce(AirZoneId);
             }
         }
-        else
+        else { upForce = 0f; }
+        
+        if (upForce >= 0.0001f)
+        {
+            upForce -= 0.0001f;
+        }
+        if (upForce < 0f)
         {
             upForce = 0f;
         }
@@ -673,7 +672,7 @@ public class PlayerControl : MonoBehaviour
             {
                 if (lukFacing > -75f)
                 {
-                    lukFacing = lukFacing - Math.Min(Math.Abs(lukFacing+75f), Math.Abs(lukFacing)) *0.008f - 0.008f;
+                    lukFacing = lukFacing - Math.Min(Math.Abs(lukFacing+75f), Math.Abs(lukFacing)) * 0.008f - 0.008f;
                     obj.transform.rotation = Quaternion.Euler(0f, 0f, lukFacing);
                 }
             }

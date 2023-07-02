@@ -166,6 +166,7 @@ MonoBehaviour:
   Mercy: 0
   moveTimeout: 0.01
   moved: 0
+  move_started: 0
 --- !u!4 &34186830
 Transform:
   m_ObjectHideFlags: 0
@@ -1471,7 +1472,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694205403}
   m_LocalRotation: {x: -0.05533343, y: -0, z: -0, w: 0.998468}
-  m_LocalPosition: {x: -9.09, y: -10.157, z: 18.045}
+  m_LocalPosition: {x: -9.09, y: -18.59, z: 18.98}
   m_LocalScale: {x: 1, y: 1.6388, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1490,7 +1491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a8e21692e72e74d80a4cbd5b9f9724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AirActiveForce: 1
+  AirActiveForce: 5
   AirForce: 0
   active: 1
   changeDurationSec: 1
@@ -1921,6 +1922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AirZoneId: -1
   LeverTurningId: -1
+  upForce: 0
   Teleporter: {fileID: 165002730}
   RoundWin: {fileID: 0}
   interractButtonShower: {fileID: 1856769884}
@@ -1932,7 +1934,6 @@ MonoBehaviour:
   jumpCooldown: 0.5
   playerHeight: 0.1
   interractCooldown: 0.2
-  flyingUp: 0
   ventIsOn: 1
   haveLeverDetail: 0
   haveSvetlyachki: 0
@@ -2408,7 +2409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 51c911b7ea87a46448f82022802430ca, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2416,7 +2417,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4e95b86dedfc9184d97a40c7cbe96850, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3971,7 +3972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 1a0e6906d6959c847bf127505a4b10c0, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3979,7 +3980,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c81cd2c35aa10774ebf34a6e46d3de4e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4624,7 +4625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 5c769b29f6b61ee4cad19dad2e5c5c96, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -4632,7 +4633,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 162e8b4d42fdfe641899b08301ebce3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4846,8 +4847,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.03, y: 28.17, z: 5.91}
-  m_Center: {x: 0.2, y: 0.5, z: 0}
+  m_Size: {x: 5.03, y: 28.17, z: 6.36}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!4 &1942266627
 Transform:
   m_ObjectHideFlags: 0
@@ -4856,7 +4857,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942266625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.09, y: 7.59, z: -14.35}
+  m_LocalPosition: {x: -8.369, y: 7.59, z: -14.18}
   m_LocalScale: {x: 1, y: 0.33516, z: 0.39698}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4875,10 +4876,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a8e21692e72e74d80a4cbd5b9f9724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AirActiveForce: 1
+  AirActiveForce: 5
   AirForce: 0
   active: 1
-  changeDurationSec: 1
+  changeDurationSec: 4
   id: 1
 --- !u!1 &1950042445
 GameObject:

@@ -42,11 +42,7 @@ public class Air : MonoBehaviour
 
     public float GetForce()
     {
-        if (active)
-        {
-            return AirForce*0.001f;
-        }
-        return 0f;
+        return AirForce*0.0002f;
     }
 
     public void SwitchState()
