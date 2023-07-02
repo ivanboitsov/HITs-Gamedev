@@ -17,7 +17,9 @@ public class PlayerControl : MonoBehaviour
     public SceneTeleporter Teleporter;
 #nullable enable
     public CheckWin? RoundWin;
-    public InterractZoneCatcher? tut;
+    public InterractZoneCatcher? interractButtonShower;
+    public InterractZoneCatcher? turnButtonShower;
+    public InterractZoneCatcher? climbButtonShower;
     [Header("Winds Object")]
     public AirArray? AirsArray;
 
@@ -121,6 +123,10 @@ public class PlayerControl : MonoBehaviour
 
         inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone || inLukOpenZone || inKeyPickZone || inBranchZone ||
             inRopeZone || inWormZone || inFishZone || inLakeZone || inBenzopilaZone || inLadderZone || inGolemZone || inLampZone;
+
+        interractButtonShower.SwitchState(inInterractZone);
+        turnButtonShower.SwitchState(inTurnZone);
+        climbButtonShower.SwitchState(inLadderZone);
 
         if (Input.GetKey(turnerKey) && inTurnZone && interractReady)
         {
@@ -374,6 +380,16 @@ public class PlayerControl : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    public float GetXscale()
+    {
+        return transform.localScale.x;
+    }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
     }
 
     void OnTriggerEnter(Collider other)
