@@ -153,6 +153,10 @@ public class PlayerControl : MonoBehaviour
         turnButtonShower.SwitchState(inTurnZone);
         climbButtonShower.SwitchState(inLadderZone);
 
+        if (Input.GetKey(KeyCode.Escape)) {
+            SceneManager.LoadScene(0);
+        }
+
         if (Input.GetKey(turnerKey) && inTurnZone && interractReady)
         {
             if (Quaternion.Angle(transform.rotation, Quaternion.Euler(0f, 90f, 0f)) <= 0.01f)
