@@ -332,7 +332,6 @@ public class tubeBlock : MonoBehaviour
     {
         if (type == "straight")
         {
-            UnityEngine.Debug.Log(prev.ToString() + " " + idMatrix.ToString() + " " + rotationState.ToString());
             if (rotationState == 0f || rotationState == 180f)
             {
                 if (prev == idMatrix - 4 || prev == idMatrix + 4)

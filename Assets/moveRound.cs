@@ -10,7 +10,7 @@ public class moveRound : MonoBehaviour
     public float movedG = 0f;
     public float needG = 0f;
     private Vector3 myCenter;
-    private float distation = 0f;
+    public float distation = 0f;
     public float startX = 0f;
     public bool moveUp = true;
     public bool moveRight = true;
@@ -33,9 +33,9 @@ public class moveRound : MonoBehaviour
         movedG = 0f;
         needG = angle;
         myCenter = center;
-        distation = Math.Abs(startXx - myCenter.x);
+        distation = Math.Abs(startXx - myCenter.x) - 7.62f;
         startX = startXx;//transform.position.x;
-        UnityEngine.Debug.Log(startXx.ToString() + " " + myCenter.x.ToString());
+        
         if (startXx < myCenter.x)
         {
             distation = Math.Abs(distation);
@@ -53,11 +53,11 @@ public class moveRound : MonoBehaviour
     {
         if (needG > movedG)
         {
-            movedG += 0.2f;
+            movedG += 0.5f;
         }
         else
         {
-            movedG -= 0.2f;
+            movedG -= 0.5f;
         }
         
         float placeX = (float)Math.Cos((double)(movedG * Math.PI / 180f)) * distation;
@@ -79,6 +79,6 @@ public class moveRound : MonoBehaviour
 
         placeY += myCenter.y;
 
-        transform.position = new Vector3( placeX, placeY, transform.position.z );
+        transform.position = new Vector3( placeX, placeY, transform.position.z);
     }
 }

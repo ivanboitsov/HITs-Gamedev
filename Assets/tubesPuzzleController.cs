@@ -95,7 +95,6 @@ public class tubesPuzzleController : MonoBehaviour
                 break;
             }
             childID++;
-            UnityEngine.Debug.Log("bruh1s");
         }
         if (flag)
         {
