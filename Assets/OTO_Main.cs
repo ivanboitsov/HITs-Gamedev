@@ -11,14 +11,10 @@ public class OTO_Main : MonoBehaviour
     private bool ch = false;
     // как сформировал послетдовательность:
     // 0 1 2 3 4
-    // 2 1 0 3 4
-    // 2 3 0 1 4
-    // 2 3 4 1 0
-    // 4 3 2 1 0
-    // 4 1 2 3 0
-    // 4 1 0 3 2
 
-    private int[] poryadok = { 4, 1, 0, 3, 2 };
+    // 4 3 0 1 2
+
+    private int[] poryadok = { 4, 3, 0, 1, 2 };
 
     public void ClickOnButton(int buttonId)
     {
