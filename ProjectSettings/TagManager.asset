@@ -57,6 +57,16 @@ TagManager:
   - dedStoneActivated
   - Pyatnashki
   - tubeBlock
+  - cyanGnom
+  - yellowGnom
+  - orangeGnom
+  - greenGnom
+  - purpleGnom
+  - forPurple
+  - forOrange
+  - forYellow
+  - forBlue
+  - forGreen
   layers:
   - Default
   - TransparentFX
