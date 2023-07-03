@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec6e392431264944b24e0382c1463da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myId: 2
+  myId: 4
 --- !u!135 &469892353
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1100,7 +1100,7 @@ GameObject:
   - component: {fileID: 1120891600}
   - component: {fileID: 1120891599}
   - component: {fileID: 1120891598}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1350,7 +1350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec6e392431264944b24e0382c1463da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myId: 4
+  myId: 0
 --- !u!135 &1220889006
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1502,7 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec6e392431264944b24e0382c1463da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myId: 0
+  myId: 2
 --- !u!135 &1472336142
 SphereCollider:
   m_ObjectHideFlags: 0

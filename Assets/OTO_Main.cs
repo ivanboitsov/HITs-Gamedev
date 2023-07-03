@@ -13,10 +13,12 @@ public class OTO_Main : MonoBehaviour
     // 0 1 2 3 4
     // 2 1 0 3 4
     // 2 3 0 1 4
-    // 2 1 0 3 4
-    // 2 1 4 3 0
+    // 2 3 4 1 0
+    // 4 3 2 1 0
+    // 4 1 2 3 0
+    // 4 1 0 3 2
 
-    private int[] poryadok = { 2, 1, 4, 3, 0 };
+    private int[] poryadok = { 4, 1, 0, 3, 2 };
 
     public void ClickOnButton(int buttonId)
     {
