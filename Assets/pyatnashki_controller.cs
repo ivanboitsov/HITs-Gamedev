@@ -4,6 +4,8 @@ public class CubeController : MonoBehaviour
 {
     public GameObject baseCube;
 
+    public PuzzleController cubesController;
+
     private bool isClickable = true;
 
     private void OnMouseDown()
@@ -23,13 +25,12 @@ public class CubeController : MonoBehaviour
     {
         Vector3 currentPosition = transform.position;
         Vector3 basePosition = baseCube.transform.position;
-
-        return Mathf.Abs(currentPosition.x - basePosition.x) + Mathf.Abs(currentPosition.y - basePosition.y) < 0.7;
+        return Mathf.Pow(Mathf.Pow(Mathf.Abs(currentPosition.z - basePosition.z), 2) + Mathf.Pow(Mathf.Abs(currentPosition.y - basePosition.y), 2), 0.5f) < 0.4;
     }
 
     private System.Collections.IEnumerator SwapCubes(CubeController baseCubeController)
     {
-        isClickable = false;
+        offClick();
 
         Vector3 basePosition = baseCube.transform.position;
         Vector3 nowPosition = transform.position;
@@ -39,8 +40,22 @@ public class CubeController : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        baseCubeController.isClickable = true;
-        isClickable = true;
+        onClick();
+    }
+
+    public void offClick()
+    {
+        foreach (var cube in cubesController.cubes)
+        {
+            cube.isClickable = false;
+        } 
+    }
+    public void onClick()
+    {
+        foreach (var cube in cubesController.cubes)
+        {
+            cube.isClickable = true;
+        }
     }
 
     private System.Collections.IEnumerator MoveObjectToPosition(Transform obj, Vector3 targetPosition, float duration)

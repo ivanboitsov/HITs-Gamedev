@@ -10,9 +10,21 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
 
+    public int AirZoneId = -1;
+    public int LeverTurningId = -1;
+    public float upForce = 0f;
+
+    public bool isDead = false;
+
     [Header("Scripts")]
     public SceneTeleporter Teleporter;
-    public CheckWin RoundWin;
+#nullable enable
+    public CheckWin? RoundWin;
+    public InterractZoneCatcher? interractButtonShower;
+    public InterractZoneCatcher? turnButtonShower;
+    public InterractZoneCatcher? climbButtonShower;
+    [Header("Winds Object")]
+    public AirArray? AirsArray;
 
     [Header("Movement")]
     public float speed = 0.5f;
@@ -24,7 +36,6 @@ public class PlayerControl : MonoBehaviour
     public float interractCooldown = 0.2f;
 
     [Header("Bools")]
-    public bool flyingUp = false;
     public bool ventIsOn = true;
     public bool haveLeverDetail = false;
     public bool haveSvetlyachki = false;
@@ -35,6 +46,8 @@ public class PlayerControl : MonoBehaviour
     public bool fishAppeared = false;
     public bool haveFish = false;
     public bool brevnoCutted = false;
+    public bool lampPicked = false;
+    public bool lampPlaced = false;
     
 
     [Header("Binds")]
@@ -43,7 +56,7 @@ public class PlayerControl : MonoBehaviour
     public KeyCode turnerKey = KeyCode.Q;
     public KeyCode climbingKey = KeyCode.W;
 
-    private Animator ventAnimator;
+    private Animator? ventAnimator;
 
     private float rotationAmount = 90f;
     private Quaternion targetRotation;
@@ -57,6 +70,7 @@ public class PlayerControl : MonoBehaviour
     private float leverFacing = -30f;
     private bool lukOpened = false;
     private float lukFacing = 0f;
+    
 
     [Header("Interract Zones Checkers")]
     public bool inTurnZone = false;
@@ -73,10 +87,15 @@ public class PlayerControl : MonoBehaviour
     public bool inFishZone = false;
     public bool inBenzopilaZone = false;
     public bool inLadderZone = false;
+    public bool inGolemZone = false;
+    public bool inLampZone = false;
 
     [Header("Ground Layers")]
     public LayerMask groundLayer;
     public LayerMask groundNonJumpLayer;
+
+    private bool onceDie = false;
+    private bool onceIdle = false;
 
     void Start()
     {
@@ -84,7 +103,10 @@ public class PlayerControl : MonoBehaviour
 
         foreach (GameObject obj in objectsWithTag)
         {
-            ventAnimator = obj.GetComponent<Animator>();
+            if (ventAnimator == null)
+            {
+                ventAnimator = obj.GetComponent<Animator>();
+            }
         }
 
         FixLevers();
@@ -105,7 +127,11 @@ public class PlayerControl : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone || inLukOpenZone || inKeyPickZone || inBranchZone ||
-            inRopeZone || inWormZone || inFishZone || inLakeZone || inBenzopilaZone;
+            inRopeZone || inWormZone || inFishZone || inLakeZone || inBenzopilaZone || inLadderZone || inGolemZone || inLampZone;
+
+        interractButtonShower.SwitchState(inInterractZone);
+        turnButtonShower.SwitchState(inTurnZone);
+        climbButtonShower.SwitchState(inLadderZone);
 
         if (Input.GetKey(turnerKey) && inTurnZone && interractReady)
         {
@@ -128,7 +154,7 @@ public class PlayerControl : MonoBehaviour
             jumpReady = false;
             Invoke(nameof(ResetJump), jumpCooldown);
         }
-        if (Input.GetKey(climbingKey) && lukOpened && inLadderZone)
+        if (Input.GetKey(climbingKey) && inLadderZone)
         {
             Climb();
         }
@@ -138,6 +164,15 @@ public class PlayerControl : MonoBehaviour
             Invoke(nameof(ResetInterraction), interractCooldown);
             if (inLeverZone && haveLeverDetail)
             {
+                if (LeverTurningId != -1)
+                {
+                    GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Vent_turner");
+                    if (LeverTurningId < objectsWithTag.Length)
+                    {
+                        objectsWithTag[LeverTurningId].GetComponent<AirArray>().SwitchStates();
+                    }
+                }
+
                 if (!ventIsOn)
                 {
                     ventIsOn = true;
@@ -158,16 +193,20 @@ public class PlayerControl : MonoBehaviour
                 foreach (GameObject obj in objectsWithTag)
                 {
                     GameObject luk_obj = obj.transform.GetChild(1).gameObject;
-                    luk_obj.GetComponent<BoxCollider>().enabled = false;
+                    try
+                    {
+                        luk_obj.GetComponent<BoxCollider>().enabled = false;
+                    }
+                    catch { }
                 }
             }
             else if (inLeverPickerZone && !haveLeverDetail)
             {
                 haveLeverDetail = true;
-                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("leverDetail");
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("leverDetailPick");
                 foreach (GameObject obj in objectsWithTag)
                 {
-                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y-1f, obj.transform.position.z);
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y-5f, obj.transform.position.z+20f);
                 }
             }
             else if (inSvetlyachkiPickerZone && !haveSvetlyachki)
@@ -206,14 +245,21 @@ public class PlayerControl : MonoBehaviour
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
                 }
             }
-            else if (inWormZone && !haveWorm && RoundWin.winned)
+            else if (inWormZone && !haveWorm)
             {
-                haveWorm = true;
-                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("wormPick");
-                foreach (GameObject obj in objectsWithTag)
+                if (RoundWin != null)
                 {
-                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                    if (RoundWin.winned)
+                    {
+                        haveWorm = true;
+                        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("wormPick");
+                        foreach (GameObject obj in objectsWithTag)
+                        {
+                            obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                        }
+                    }
                 }
+                
             }
             else if (inLakeZone && !fishAppeared && haveBranch && haveRope && haveWorm)
             {
@@ -247,52 +293,93 @@ public class PlayerControl : MonoBehaviour
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
                 }
             }
+            else if (inLampZone && !lampPicked)
+            {
+                lampPicked = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lampDeactivated");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
+                }
+            }
+            else if (inGolemZone && lampPicked && !lampPlaced && haveSvetlyachki)
+            {
+                lampPlaced = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("lampActivated");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
+                }
+
+                GameObject[] dedStoneAct = GameObject.FindGameObjectsWithTag("dedStoneActivated");
+                foreach (GameObject obj in dedStoneAct)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
+                }
+
+                GameObject[] dedStoneDeact = GameObject.FindGameObjectsWithTag("dedStoneDeactivated");
+                foreach (GameObject obj in dedStoneDeact)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                }
+            }
         }
 
 
-
-        if (inTurnZone)
+        if (!isDead)
         {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-        }
-        Vector3 moveDirection = transform.right * horizontalInput * inputBoost;
-        rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime * inputBoost);
+            onceDie = false;
+            if (!onceIdle)
+            {
+                onceIdle = true;
+                animator.SetTrigger("idle");
+            }
+            if (inTurnZone)
+            {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
+            Vector3 moveDirection = transform.right * horizontalInput * inputBoost;
+            rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime * inputBoost);
 
-        bool isRun = moveDirection.magnitude > 0.1f;
- 
-        if (!grounded)
-        {
-            animator.SetBool("isRun", false);
-            animator.SetBool("isJump", true);
+            bool isRun = moveDirection.magnitude > 0.1f;
+
+            if (!grounded)
+            {
+                animator.SetBool("isRun", false);
+                animator.SetBool("isJump", true);
+            }
+            else
+            {
+                animator.SetBool("isRun", isRun);
+                animator.SetBool("isJump", false);
+            }
+
+            if (horizontalInput < 0 && isFacingRight)
+            {
+                Flip();
+            }
+            else if (horizontalInput > 0 && !isFacingRight)
+            {
+                Flip();
+            }
+            else if (horizontalInput == 0)
+            {
+                inputBoost = 1;
+            }
         }
         else
         {
-            animator.SetBool("isRun", isRun);
-            animator.SetBool("isJump", false);
-        }
-
-        if (horizontalInput < 0 && isFacingRight)
-        {
-            Flip();
-        }
-        else if (horizontalInput > 0 && !isFacingRight)
-        {
-            Flip();
-        }
-        else if (horizontalInput == 0)
-        {
-            inputBoost = 1;
-        }
-
-        if (flyingUp)
-        {
-            Vector3 upperDirection = new Vector3(0f, 1f, 0f);
-            rb.AddForce(upperDirection.normalized * 7f, ForceMode.Force);
-
+            onceIdle = false;
+            if (!onceDie)
+            {
+                onceDie = true;
+                animator.SetTrigger("die");
+            }
         }
 
         ventRotating();
         luckRotation();
+        Fly();
     }
 
     void FixedUpdate()
@@ -315,6 +402,16 @@ public class PlayerControl : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    public float GetXscale()
+    {
+        return transform.localScale.x;
+    }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
     }
 
     void OnTriggerEnter(Collider other)
@@ -358,15 +455,21 @@ public class PlayerControl : MonoBehaviour
         }
         else if (other.CompareTag("PushingUp"))
         {
-            flyingUp = true;
-        }
-        else if (other.CompareTag("TurningPushingUp") && ventIsOn)
-        {
-            flyingUp = true;
+            try
+            {
+                AirZoneId = other.GetComponent<Air>().GetId();
+            }
+            catch { }
         }
         else if (other.CompareTag("Vent_turner"))
         {
             inLeverZone = true;
+            try
+            {
+                LeverTurningId = other.GetComponent<idCreator>().GetId();
+            }
+            catch { }
+            
             FixLevers();
         }
         else if (other.CompareTag("leverDetailPick"))
@@ -417,6 +520,14 @@ public class PlayerControl : MonoBehaviour
         {
             inLadderZone = true;
         }
+        else if (other.CompareTag("lampDeactivated"))
+        {
+            inLampZone = true;
+        }
+        else if (other.CompareTag("dedStoneDeactivated"))
+        {
+            inGolemZone = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -427,10 +538,11 @@ public class PlayerControl : MonoBehaviour
         }
         else if (other.CompareTag("PushingUp") || other.CompareTag("TurningPushingUp"))
         {
-            flyingUp = false;
+            AirZoneId = -1;
         }
         else if (other.CompareTag("Vent_turner"))
         {
+            LeverTurningId = -1;
             inLeverZone = false;
         }
         else if (other.CompareTag("leverDetailPick"))
@@ -473,11 +585,19 @@ public class PlayerControl : MonoBehaviour
         {
             inLadderZone = false;
         }
+        else if (other.CompareTag("lampDeactivated"))
+        {
+            inLampZone = false;
+        }
+        else if (other.CompareTag("dedStoneDeactivated"))
+        {
+            inGolemZone = false;
+        }
     }
 
     void ventRotating()
     {
-        if (ventAnimator)
+        if (ventAnimator != null)
         {
             if (ventIsOn)
             {
@@ -511,6 +631,28 @@ public class PlayerControl : MonoBehaviour
     private void Climb()
     {
         rb.velocity = new Vector3(rb.velocity.x, 3f, rb.velocity.z);
+    }
+
+    private void Fly()
+    {
+        if (AirZoneId != -1)
+        {
+            if (AirsArray != null)
+            {
+                upForce += AirsArray.GetForce(AirZoneId);
+            }
+        }
+        else { upForce = 0f; }
+        
+        if (upForce >= 0.0001f)
+        {
+            upForce -= 0.0001f;
+        }
+        if (upForce < 0f)
+        {
+            upForce = 0f;
+        }
+        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y + upForce, rb.velocity.z);
     }
 
     private void ResetJump()
@@ -552,7 +694,7 @@ public class PlayerControl : MonoBehaviour
             {
                 if (lukFacing > -75f)
                 {
-                    lukFacing = lukFacing - Math.Min(Math.Abs(lukFacing+75f), Math.Abs(lukFacing)) *0.008f - 0.008f;
+                    lukFacing = lukFacing - Math.Min(Math.Abs(lukFacing+75f), Math.Abs(lukFacing)) * 0.008f - 0.008f;
                     obj.transform.rotation = Quaternion.Euler(0f, 0f, lukFacing);
                 }
             }
@@ -560,16 +702,4 @@ public class PlayerControl : MonoBehaviour
         
     }
 
-    public AnimationClip FindAnimation(Animator animator, string name)
-    {
-        foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
-        {
-            if (clip.name == name)
-            {
-                return clip;
-            }
-        }
-
-        return null;
-    }
 }

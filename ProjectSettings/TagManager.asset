@@ -52,6 +52,11 @@ TagManager:
   - dedStoneDeactivated
   - benzopilaPick
   - Ladder
+  - lampDeactivated
+  - lampActivated
+  - dedStoneActivated
+  - Pyatnashki
+  - tubeBlock
   layers:
   - Default
   - TransparentFX

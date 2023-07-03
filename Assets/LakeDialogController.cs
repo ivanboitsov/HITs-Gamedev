@@ -5,7 +5,6 @@ using UnityEngine;
 public class LakeDialogControl : MonoBehaviour
 {
     public PlayerControl player;
-    public GameObject puzzle;
 
     private void Update()
     {
@@ -13,10 +12,6 @@ public class LakeDialogControl : MonoBehaviour
         {
 
             Destroy(gameObject);
-            if (puzzle != null)
-            {
-                Destroy(puzzle);
-            }
         }
     }
 }

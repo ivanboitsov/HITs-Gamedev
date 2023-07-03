@@ -21,7 +21,7 @@ public class ClickingButton : MonoBehaviour
         }
         else
         {
-            _renderer.material.SetColor("_EmissionColor", Color.black);
+            _renderer.material.SetColor("_EmissionColor", Color.gray);
         }
     }
 
@@ -30,7 +30,6 @@ public class ClickingButton : MonoBehaviour
         if (!buttonsScript.win)
         {
             buttonsScript.ClickOnButton(myId);
-            print("poeshGovna");
         }
     }
 }

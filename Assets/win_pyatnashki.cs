@@ -7,6 +7,10 @@ public class PuzzleController : MonoBehaviour
     private Vector3[] initialPositions;
     public bool Win = false;
     public bool Mercy = false;
+    public float moveTimeout = 0.01f;
+    public float moved = 0f;
+    public bool move_started = false;
+
 
     private void Start()
     {
@@ -18,6 +22,7 @@ public class PuzzleController : MonoBehaviour
 
         ShuffleCubes();
         isGameStarted = true;
+        moved = transform.position.y;
     }
 
     private void Update()
@@ -26,6 +31,12 @@ public class PuzzleController : MonoBehaviour
         {
             Win = true;
             isGameStarted = false;
+            
+        }
+        if (Win && !move_started)
+        {
+            MoveAfterWin();
+            move_started = true;
         }
     }
 
@@ -43,6 +54,16 @@ public class PuzzleController : MonoBehaviour
         Vector3 tempPosition = cubes[indexA].transform.position;
         cubes[indexA].transform.position = cubes[indexB].transform.position;
         cubes[indexB].transform.position = tempPosition;
+    }
+
+    private void MoveAfterWin()
+    {
+        moved -= 0.1f;
+        transform.position = new Vector3(transform.position.x, moved, transform.position.z);
+        if (moved > -39.06f)
+        {
+            Invoke(nameof(MoveAfterWin), moveTimeout);
+        }
     }
 
     private bool CheckWinCondition()

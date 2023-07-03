@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class LookToCamera : MonoBehaviour
@@ -17,7 +18,9 @@ public class LookToCamera : MonoBehaviour
         {
             obj.transform.LookAt(mainCamera.transform);
             Vector3 eulerAngles = obj.transform.rotation.eulerAngles;
-            obj.transform.rotation = Quaternion.Euler(90f, eulerAngles.y + 180f, 180f);
+            //float yAxis = (int)((eulerAngles.y + 180f + 45f) / 90f) * 90f;
+            float yAxis = transform.rotation.eulerAngles.y;
+            obj.transform.rotation = Quaternion.Euler(90f, yAxis, 180f);
         }
     }
 }
