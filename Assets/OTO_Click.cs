@@ -10,7 +10,6 @@ public class OTO_Click : MonoBehaviour
     {
         if (!buttonsScript.win)
         {
-            //UnityEngine.Debug.Log("g");
             buttonsScript.ClickOnButton(indexCreate.GetId());
         }
     }

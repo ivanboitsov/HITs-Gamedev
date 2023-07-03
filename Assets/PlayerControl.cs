@@ -14,6 +14,8 @@ public class PlayerControl : MonoBehaviour
     public int LeverTurningId = -1;
     public float upForce = 0f;
 
+    public bool isDead = false;
+
     [Header("Scripts")]
     public SceneTeleporter Teleporter;
 #nullable enable
@@ -91,6 +93,9 @@ public class PlayerControl : MonoBehaviour
     [Header("Ground Layers")]
     public LayerMask groundLayer;
     public LayerMask groundNonJumpLayer;
+
+    private bool onceDie = false;
+    private bool onceIdle = false;
 
     void Start()
     {
@@ -321,38 +326,55 @@ public class PlayerControl : MonoBehaviour
         }
 
 
-
-        if (inTurnZone)
+        if (!isDead)
         {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-        }
-        Vector3 moveDirection = transform.right * horizontalInput * inputBoost;
-        rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime * inputBoost);
+            onceDie = false;
+            if (!onceIdle)
+            {
+                onceIdle = true;
+                animator.SetTrigger("idle");
+            }
+            if (inTurnZone)
+            {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
+            Vector3 moveDirection = transform.right * horizontalInput * inputBoost;
+            rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime * inputBoost);
 
-        bool isRun = moveDirection.magnitude > 0.1f;
- 
-        if (!grounded)
-        {
-            animator.SetBool("isRun", false);
-            animator.SetBool("isJump", true);
+            bool isRun = moveDirection.magnitude > 0.1f;
+
+            if (!grounded)
+            {
+                animator.SetBool("isRun", false);
+                animator.SetBool("isJump", true);
+            }
+            else
+            {
+                animator.SetBool("isRun", isRun);
+                animator.SetBool("isJump", false);
+            }
+
+            if (horizontalInput < 0 && isFacingRight)
+            {
+                Flip();
+            }
+            else if (horizontalInput > 0 && !isFacingRight)
+            {
+                Flip();
+            }
+            else if (horizontalInput == 0)
+            {
+                inputBoost = 1;
+            }
         }
         else
         {
-            animator.SetBool("isRun", isRun);
-            animator.SetBool("isJump", false);
-        }
-
-        if (horizontalInput < 0 && isFacingRight)
-        {
-            Flip();
-        }
-        else if (horizontalInput > 0 && !isFacingRight)
-        {
-            Flip();
-        }
-        else if (horizontalInput == 0)
-        {
-            inputBoost = 1;
+            onceIdle = false;
+            if (!onceDie)
+            {
+                onceDie = true;
+                animator.SetTrigger("die");
+            }
         }
 
         ventRotating();
