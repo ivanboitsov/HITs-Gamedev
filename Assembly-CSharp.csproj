@@ -109,9 +109,11 @@
     <Compile Include="Assets\SceneTeleporter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\tubeBlock.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\OTO_Main.cs" />
     <Compile Include="Assets\LakeDialogController.cs" />
+    <Compile Include="Assets\tubesPuzzleController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\OTO_Click.cs" />
     <Compile Include="Assets\startGameScript.cs" />

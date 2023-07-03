@@ -56,6 +56,7 @@ TagManager:
   - lampActivated
   - dedStoneActivated
   - Pyatnashki
+  - tubeBlock
   layers:
   - Default
   - TransparentFX
