@@ -48,7 +48,13 @@ public class PlayerControl : MonoBehaviour
     public bool brevnoCutted = false;
     public bool lampPicked = false;
     public bool lampPlaced = false;
-    
+    [Header("Have Gnomes Items Checkers")]
+    public bool havePurple = false;
+    public bool haveOrange = false;
+    public bool haveYellow = false;
+    public bool haveBlue = false;
+    public bool haveGreen = false;
+
 
     [Header("Binds")]
     public KeyCode jumpKey = KeyCode.Space;
@@ -70,7 +76,7 @@ public class PlayerControl : MonoBehaviour
     private float leverFacing = -30f;
     private bool lukOpened = false;
     private float lukFacing = 0f;
-    
+
 
     [Header("Interract Zones Checkers")]
     public bool inTurnZone = false;
@@ -89,6 +95,18 @@ public class PlayerControl : MonoBehaviour
     public bool inLadderZone = false;
     public bool inGolemZone = false;
     public bool inLampZone = false;
+    [Header("Interract Gnomes Items Checkers")]
+    public bool inPurplePick = false;
+    public bool inOrangePick = false;
+    public bool inYellowPick = false;
+    public bool inBluePick = false;
+    public bool inGreenPick = false;
+    [Header("Interract Gnomes Checkers")]
+    public bool inPurpleInterract = false;
+    public bool inOrangeInterract = false;
+    public bool inYellowInterract = false;
+    public bool inBlueInterract = false;
+    public bool inGreenInterract = false;
 
     [Header("Ground Layers")]
     public LayerMask groundLayer;
@@ -127,7 +145,9 @@ public class PlayerControl : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         inInterractZone = inLeverZone || inLeverPickerZone || inSvetlyachkiPickerZone || inLukOpenZone || inKeyPickZone || inBranchZone ||
-            inRopeZone || inWormZone || inFishZone || inLakeZone || inBenzopilaZone || inLadderZone || inGolemZone || inLampZone;
+            inRopeZone || inWormZone || inFishZone || inLakeZone || inBenzopilaZone || inLadderZone || inGolemZone || inLampZone ||
+            inPurplePick || inPurpleInterract || inOrangePick || inOrangeInterract || inYellowPick || inYellowInterract || inBluePick ||
+            inBlueInterract || inGreenPick || inGreenInterract;
 
         interractButtonShower.SwitchState(inInterractZone);
         turnButtonShower.SwitchState(inTurnZone);
@@ -322,6 +342,91 @@ public class PlayerControl : MonoBehaviour
                 {
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
                 }
+            }
+            else if (inPurplePick)
+            {
+                havePurple= true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("forPurple");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                }
+            }
+            else if (inOrangePick)
+            {
+                haveOrange = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("forOrange");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                }
+            }
+            else if (inYellowPick)
+            {
+                haveYellow = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("forYellow");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                }
+            }
+            else if (inBluePick)
+            {
+                haveBlue = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("forBlue");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                }
+            }
+            else if (inGreenPick)
+            {
+                haveGreen = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("forGreen");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - 20f, obj.transform.position.z);
+                }
+            }
+            else if (inPurpleInterract && havePurple)
+            {
+                havePurple = false;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("forOrange");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
+                }
+            }
+            else if (inYellowInterract && haveYellow)
+            {
+                haveYellow = false;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("forYellow");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
+                }
+            }
+            else if (inOrangeInterract && haveOrange)
+            {
+                haveOrange = false;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("forBlue");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
+                }
+            }
+            else if (inBlueInterract && haveBlue)
+            {
+                haveBlue = false;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("forGreen");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
+                }
+            }
+            else if (inGreenInterract && haveGreen)
+            {
+                haveGreen = false;
             }
         }
 
@@ -528,6 +633,46 @@ public class PlayerControl : MonoBehaviour
         {
             inGolemZone = true;
         }
+        else if (other.CompareTag("forPurple"))
+        {
+            inPurplePick = true;
+        }
+        else if (other.CompareTag("forOrange"))
+        {
+            inOrangePick = true;
+        }
+        else if (other.CompareTag("forYellow"))
+        {
+            inYellowPick = true;
+        }
+        else if (other.CompareTag("forBlue"))
+        {
+            inBluePick = true;
+        }
+        else if (other.CompareTag("forGreen"))
+        {
+            inGreenPick = true;
+        }
+        else if (other.CompareTag("purpleGnom"))
+        {
+            inPurpleInterract = true;
+        }
+        else if (other.CompareTag("orangeGnom"))
+        {
+            inOrangeInterract = true;
+        }
+        else if (other.CompareTag("yellowGnom"))
+        {
+            inYellowInterract = true;
+        }
+        else if (other.CompareTag("blueGnom"))
+        {
+            inBlueInterract = true;
+        }
+        else if (other.CompareTag("greenGnom"))
+        {
+            inGreenInterract = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -592,6 +737,46 @@ public class PlayerControl : MonoBehaviour
         else if (other.CompareTag("dedStoneDeactivated"))
         {
             inGolemZone = false;
+        }
+        else if (other.CompareTag("forPurple"))
+        {
+            inPurplePick = false;
+        }
+        else if (other.CompareTag("forOrange"))
+        {
+            inOrangePick = false;
+        }
+        else if (other.CompareTag("forYellow"))
+        {
+            inYellowPick = false;
+        }
+        else if (other.CompareTag("forBlue"))
+        {
+            inBluePick = false;
+        }
+        else if (other.CompareTag("forGreen"))
+        {
+            inGreenPick = false;
+        }
+        else if (other.CompareTag("purpleGnom"))
+        {
+            inPurpleInterract = false;
+        }
+        else if (other.CompareTag("orangeGnom"))
+        {
+            inOrangeInterract = false;
+        }
+        else if (other.CompareTag("yellowGnom"))
+        {
+            inYellowInterract = false;
+        }
+        else if (other.CompareTag("blueGnom"))
+        {
+            inBlueInterract = false;
+        }
+        else if (other.CompareTag("greenGnom"))
+        {
+            inGreenInterract = false;
         }
     }
 
