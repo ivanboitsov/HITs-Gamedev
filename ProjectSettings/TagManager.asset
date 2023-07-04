@@ -67,6 +67,8 @@ TagManager:
   - forYellow
   - forBlue
   - forGreen
+  - sideTurnerUp
+  - sideTurnerDown
   layers:
   - Default
   - TransparentFX

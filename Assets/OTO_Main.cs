@@ -31,7 +31,7 @@ public class OTO_Main : MonoBehaviour
             {
                 idInObj++;
             }
-            UnityEngine.Debug.Log(idInP.ToString()+" "+idInObj.ToString());
+            
             if (idInP > 0 && idInP < 4)
             {
                 ch = true;
@@ -43,8 +43,6 @@ public class OTO_Main : MonoBehaviour
                     k++;
                 }
 
-                //UnityEngine.Debug.Log( (idInP-1).ToString() + " " + k.ToString());
-
                 transform.GetChild(k).gameObject.GetComponent<moveRound>().MoveStart(180f, theCenter, 0.205f * (idInP - 3));
 
                 k = 0;
@@ -53,11 +51,7 @@ public class OTO_Main : MonoBehaviour
                     k++;
                 }
 
-                //UnityEngine.Debug.Log( (idInP + 1).ToString() + " " + k.ToString());
-
                 transform.GetChild(k).gameObject.GetComponent<moveRound>().MoveStart(180f, theCenter, 0.205f * (idInP - 1));
-                //UnityEngine.Debug.Log(theCenter.y.ToString() + " tis is Y");
-                //UnityEngine.Debug.Log(theCenter.x);
             }
             else
             {
@@ -89,6 +83,16 @@ public class OTO_Main : MonoBehaviour
             if (now >= 5)
             {
                 win = true;
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("sideTurnerUp");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.rotation = Quaternion.Euler(obj.transform.position.x, obj.transform.position.y - 90f, obj.transform.position.z);
+                }
+                objectsWithTag = GameObject.FindGameObjectsWithTag("sideTurnerDown");
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    obj.transform.rotation = Quaternion.Euler(obj.transform.position.x, obj.transform.position.y + 90f, obj.transform.position.z);
+                }
             }
         }
         clickReady = true;
