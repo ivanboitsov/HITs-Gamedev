@@ -7,6 +7,26 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Mat.1
+    second: {fileID: 2100000, guid: 878622b4f66c4174f97cd7e644651a7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.2
+    second: {fileID: 2100000, guid: 6614ef2e402b4494bb7d33b017accb9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bakedcarMat
+    second: {fileID: 2100000, guid: fb5143b86bf167e4cab044c0a56f92d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bakedcarMatW
+    second: {fileID: 2100000, guid: 0e7ccabe8bff1e84698d0b095ffeabd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: blackCar
     second: {fileID: 2100000, guid: 76e088c1500aa074fa1c1c8d9ca6af95, type: 2}
   - first:
