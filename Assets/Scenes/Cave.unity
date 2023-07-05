@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07098388, g: 0.07891851, b: 0.091369756, a: 1}
+  m_IndirectSpecularColor: {r: 0.059326172, g: 0.060546763, b: 0.05703739, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1472,7 +1472,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694205403}
   m_LocalRotation: {x: -0.05533343, y: -0, z: -0, w: 0.998468}
-  m_LocalPosition: {x: -9.09, y: -18.59, z: 18.98}
+  m_LocalPosition: {x: -9.09, y: -12.32, z: 18.28}
   m_LocalScale: {x: 1, y: 1.6388, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a8e21692e72e74d80a4cbd5b9f9724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AirActiveForce: 5
+  AirActiveForce: 15
   AirForce: 0
   active: 1
   changeDurationSec: 1
@@ -4892,10 +4892,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a8e21692e72e74d80a4cbd5b9f9724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AirActiveForce: 5
+  AirActiveForce: 15
   AirForce: 0
   active: 1
-  changeDurationSec: 4
+  changeDurationSec: 2
   id: 1
 --- !u!1 &1950042445
 GameObject:

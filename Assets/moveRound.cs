@@ -15,12 +15,12 @@ public class moveRound : MonoBehaviour
     public bool moveUp = true;
     public bool moveRight = true;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (movedG != Math.Abs(needG))
         {
             Move();
-            if (Math.Abs(needG - movedG) < 0.1f)
+            if (Math.Abs(needG - movedG) < 5f)
             {
                 movedG = needG;
                 Move();
@@ -31,7 +31,7 @@ public class moveRound : MonoBehaviour
     public void MoveStart(float angle, Vector3 center, float startXx)
     {
         movedG = 0f;
-        needG = angle;
+        needG = angle*(181f/180f);
         myCenter = center;
         distation = Math.Abs(startXx - myCenter.x) - 7.62f;
         startX = startXx;//transform.position.x;
@@ -51,14 +51,19 @@ public class moveRound : MonoBehaviour
 
     private void Move()
     {
-        if (needG > movedG)
+        if (Math.Abs(needG) > Math.Abs(movedG))
         {
-            movedG += 0.5f;
+            if (needG > movedG)
+            {
+                movedG += 5f;
+            }
+            else
+            {
+                movedG -= 5f;
+            }
         }
-        else
-        {
-            movedG -= 0.5f;
-        }
+        
+        
         
         float placeX = (float)Math.Cos((double)(movedG * Math.PI / 180f)) * distation;
         

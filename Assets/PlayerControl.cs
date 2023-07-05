@@ -401,18 +401,18 @@ public class PlayerControl : MonoBehaviour
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
                 }
             }
-            else if (inYellowInterract && haveYellow)
+            else if (inOrangeInterract && haveOrange)
             {
-                haveYellow = false;
+                haveOrange = false;
                 GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("forYellow");
                 foreach (GameObject obj in objectsWithTag)
                 {
                     obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + 20f, obj.transform.position.z);
                 }
             }
-            else if (inOrangeInterract && haveOrange)
+            else if (inYellowInterract && haveYellow)
             {
-                haveOrange = false;
+                haveYellow = false;
                 GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("forBlue");
                 foreach (GameObject obj in objectsWithTag)
                 {
@@ -485,10 +485,6 @@ public class PlayerControl : MonoBehaviour
                 animator.SetTrigger("die");
             }
         }
-
-        ventRotating();
-        luckRotation();
-        Fly();
     }
 
     void FixedUpdate()
@@ -503,6 +499,9 @@ public class PlayerControl : MonoBehaviour
             targetRotation *= Quaternion.Euler(0f, -rotationAmount, 0f);
             rotateCounterClockwise = false;
         }
+        ventRotating();
+        luckRotation();
+        Fly();
     }
 
     void Flip()
@@ -589,7 +588,7 @@ public class PlayerControl : MonoBehaviour
         {
             inSvetlyachkiPickerZone = true;
         }
-        else if (other.CompareTag("lukOpenZone"))
+        else if (other.CompareTag("lukOpenZone") && haveLukKey)
         {
             inLukOpenZone = true;
         }
@@ -613,7 +612,7 @@ public class PlayerControl : MonoBehaviour
         {
             inWormZone = true;
         }
-        else if (other.CompareTag("lakePick"))
+        else if (other.CompareTag("lakePick") && haveBranch && haveWorm && haveRope)
         {
             inLakeZone = true;
         }
@@ -621,7 +620,7 @@ public class PlayerControl : MonoBehaviour
         {
             inFishZone = true;
         }
-        else if (other.CompareTag("benzopilaPick"))
+        else if (other.CompareTag("benzopilaPick") && haveFish)
         {
             inBenzopilaZone = true;
         }
@@ -633,7 +632,7 @@ public class PlayerControl : MonoBehaviour
         {
             inLampZone = true;
         }
-        else if (other.CompareTag("dedStoneDeactivated"))
+        else if (other.CompareTag("dedStoneDeactivated") && haveSvetlyachki && lampPicked)
         {
             inGolemZone = true;
         }
@@ -657,23 +656,23 @@ public class PlayerControl : MonoBehaviour
         {
             inGreenPick = true;
         }
-        else if (other.CompareTag("purpleGnom"))
+        else if (other.CompareTag("purpleGnom") && havePurple)
         {
             inPurpleInterract = true;
         }
-        else if (other.CompareTag("orangeGnom"))
+        else if (other.CompareTag("orangeGnom") && haveOrange)
         {
             inOrangeInterract = true;
         }
-        else if (other.CompareTag("yellowGnom"))
+        else if (other.CompareTag("yellowGnom") && haveYellow)
         {
             inYellowInterract = true;
         }
-        else if (other.CompareTag("blueGnom"))
+        else if (other.CompareTag("cyanGnom") && haveBlue)
         {
             inBlueInterract = true;
         }
-        else if (other.CompareTag("greenGnom"))
+        else if (other.CompareTag("greenGnom") && haveGreen)
         {
             inGreenInterract = true;
         }
@@ -774,7 +773,7 @@ public class PlayerControl : MonoBehaviour
         {
             inYellowInterract = false;
         }
-        else if (other.CompareTag("blueGnom"))
+        else if (other.CompareTag("cyanGnom"))
         {
             inBlueInterract = false;
         }
