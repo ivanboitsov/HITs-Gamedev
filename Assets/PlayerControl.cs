@@ -789,11 +789,11 @@ public class PlayerControl : MonoBehaviour
         {
             if (ventIsOn)
             {
-                ventAnimator.speed = ventAnimator.speed + 0.001f;
+                ventAnimator.speed = ventAnimator.speed + 0.01f;
             }
             else
             {
-                ventAnimator.speed = ventAnimator.speed * 0.999f;
+                ventAnimator.speed = ventAnimator.speed * 0.99f;
             }
 
             if (ventAnimator.speed > 1f)
